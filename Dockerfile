@@ -1,26 +1,28 @@
-# Check out https://hub.docker.com/_/node to select a new base image
-FROM node:16-slim
+FROM registry.access.redhat.com/ubi10/nodejs-22:latest
 
-RUN apt-get update && \
-    apt-get install -y build-essential openssl libssl-dev libbz2-dev python3 libxml2
+# Apply latest security patches and install build dependencies as root
+# (native modules such as ibm_db)
+USER root
+RUN dnf upgrade -y --refresh --nodocs && \
+    dnf install -y --setopt=install_weak_deps=0 --nodocs \
+        gcc-c++ make openssl openssl-devel bzip2-devel python3 libxml2 && \
+    dnf clean all
 
-# Set to a non-root built-in user `node`
-USER node
+# Switch back to the non-root default user of the UBI Node.js image
+USER 1001
 
-# Create app directory (with user `node`)
-RUN mkdir -p /home/node/app
-
-WORKDIR /home/node/app
+# App directory (owned by user 1001)
+WORKDIR /opt/app-root/src
 
 # Install app dependencies
 # A wildcard is used to ensure both package.json AND package-lock.json are copied
 # where available (npm@5+)
-COPY --chown=node package*.json ./
+COPY --chown=1001:0 package*.json ./
 
 RUN npm install
 
 # Bundle app source code
-COPY --chown=node . .
+COPY --chown=1001:0 . .
 
 RUN npm run build
 

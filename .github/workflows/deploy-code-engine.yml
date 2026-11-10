@@ -1,0 +1,104 @@
+name: Build image and deploy to IBM Code Engine
+
+# Run when a PR is merged by pushing its merge commit to main.
+# Protect main so it cannot be pushed to directly.
+on:
+  push:
+    branches:
+      - main
+
+  # Manual deployment button in the GitHub Actions UI.
+  # Go to Actions → "Build image and deploy to IBM Code Engine" → Run workflow.
+  workflow_dispatch:
+
+concurrency:
+  group: production-code-engine
+  cancel-in-progress: true
+
+env:
+  IBM_REGION: ${{ vars.IBM_REGION }}
+  ICR_HOST: ${{ vars.ICR_HOST }}
+  IBM_RESOURCE_GROUP: ${{ vars.IBM_RESOURCE_GROUP }}
+  CE_PROJECT: ${{ vars.CE_PROJECT }}
+  CE_APP_NAME: ${{ vars.CE_APP_NAME }}
+  ICR_NAMESPACE: ${{ vars.ICR_NAMESPACE }}
+  IMAGE_NAME: ${{ vars.IMAGE_NAME }}
+  IBM_CLOUD_API_KEY: ${{ secrets.IBM_CLOUD_API_KEY }}
+
+jobs:
+  build-push-deploy:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+
+    steps:
+      - name: Check out merged source
+        uses: actions/checkout@v7
+
+      # Generates tags and OCI labels for the image:
+      #   br.icr.io/namespace/image:latest
+      #   br.icr.io/namespace/image:sha-<short-sha>
+      - name: Extract image metadata
+        id: meta
+        uses: docker/metadata-action@v6
+        with:
+          images: ${{ env.ICR_HOST }}/${{ env.ICR_NAMESPACE }}/${{ env.IMAGE_NAME }}
+          tags: |
+            type=raw,value=latest,enable={{is_default_branch}}
+            type=sha,prefix=sha-,format=short
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v4
+
+      # ICR accepts IAM API-key authentication with username "iamapikey".
+      - name: Log in to IBM Cloud Container Registry
+        uses: docker/login-action@v4
+        with:
+          registry: ${{ env.ICR_HOST }}
+          username: iamapikey
+          password: ${{ env.IBM_CLOUD_API_KEY }}
+
+      # This build happens on the GitHub-hosted runner, not in Code Engine.
+      - name: Build and push image to ICR
+        id: docker-build
+        uses: docker/build-push-action@v7
+        with:
+          context: .
+          file: ./Dockerfile
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          provenance: false
+          platforms: linux/amd64
+
+      - name: Authenticate and configure IBM Cloud CLI
+        uses: IBM/actions-ibmcloud-cli@v2
+        with:
+          api_key: ${{ secrets.IBM_CLOUD_API_KEY }}
+          region: ${{ env.IBM_REGION }}
+          group: ${{ env.IBM_RESOURCE_GROUP }}
+          plugins: 'code-engine'
+
+      - name: Update Code Engine application
+        shell: bash
+        env:
+          # Code Engine pulls images through the private internal endpoint.
+          # Prefix the public ICR host with "private." so the pull stays
+          # within the IBM Cloud backbone and the registry accepts the request.
+          IMAGE_NAME: private.${{ env.ICR_HOST }}/${{ env.ICR_NAMESPACE }}/${{ env.IMAGE_NAME }}
+          IMAGE_DIGEST: ${{ steps.docker-build.outputs.digest }}
+        run: |
+          set -euo pipefail
+
+          ibmcloud ce project select --name "${CE_PROJECT}"
+
+          # Deploy an immutable digest reference via the private ICR endpoint:
+          # private.br.icr.io/namespace/app@sha256:...
+          DEPLOY_IMAGE="${IMAGE_NAME}@${IMAGE_DIGEST}"
+
+          ibmcloud ce app update \
+            --name "${CE_APP_NAME}" \
+            --image "${DEPLOY_IMAGE}"
+
+          ibmcloud ce app get --name "${CE_APP_NAME}"
