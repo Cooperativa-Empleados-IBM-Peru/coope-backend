@@ -113,7 +113,7 @@ export class CoopesociosController {
         limit: 5,
       });
     }
-    const socio = matches.find((s) => s.codempleado && s.codempleado.trim() === key);
+    const socio = matches.find(s => s.codempleado?.trim() === key);
 
     if (!socio) {
       throw new HttpErrors.NotFound(`Socio con código ${key} no encontrado en db2`);
