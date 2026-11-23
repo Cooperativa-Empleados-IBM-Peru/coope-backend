@@ -21,6 +21,7 @@ env:
   IBM_RESOURCE_GROUP: ${{ vars.IBM_RESOURCE_GROUP }}
   CE_PROJECT: ${{ vars.CE_PROJECT }}
   CE_APP_NAME: ${{ vars.CE_APP_NAME }}
+  REG_SECRET: ${{ vars.REG_SECRET }}
   ICR_NAMESPACE: ${{ vars.ICR_NAMESPACE }}
   IMAGE_NAME: ${{ vars.IMAGE_NAME }}
   IBM_CLOUD_API_KEY: ${{ secrets.IBM_CLOUD_API_KEY }}
