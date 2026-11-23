@@ -36,7 +36,7 @@ USER 1001
 
 WORKDIR /opt/app-root/src
 
-ENV NODE_ENV=production HOST=0.0.0.0 PORT=3000
+ENV HOST=0.0.0.0 PORT=3000
 
 COPY --from=build --chown=1001:0 /opt/app-root/src/package.json ./
 COPY --from=build --chown=1001:0 /opt/app-root/src/node_modules ./node_modules
