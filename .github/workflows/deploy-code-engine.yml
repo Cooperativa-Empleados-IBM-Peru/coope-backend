@@ -99,6 +99,14 @@ jobs:
 
           ibmcloud ce app update \
             --name "${CE_APP_NAME}" \
-            --image "${DEPLOY_IMAGE}"
+            --image "${DEPLOY_IMAGE}" \
+            --max-scale 1 \
+            --min-scale 1 \
+            --cpu 0.125 \
+            --memory 0.25G \
+            --env-from-configmap DB2_=db2-configmap \
+            --env-from-secret DB2_=db2-secret \
+            --env-from-configmap CLOUDANT_=cloudant-configmap \
+            --env-from-secret CLOUDANT_=cloudant-secret
 
           ibmcloud ce app get --name "${CE_APP_NAME}"
