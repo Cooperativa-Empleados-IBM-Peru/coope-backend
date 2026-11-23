@@ -30,4 +30,4 @@ Las siguientes variables son definidas en los Environments de UAT y PROD en Gith
 - DB2_PASSWORD
 - DB2_PORT
 - DB2_SSLDSN
-- DB2_USER
+- DB2_USERNAME

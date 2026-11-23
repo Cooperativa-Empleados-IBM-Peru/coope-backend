@@ -24,6 +24,7 @@ env:
   REG_SECRET: ${{ vars.REG_SECRET }}
   ICR_NAMESPACE: ${{ vars.ICR_NAMESPACE }}
   IMAGE_NAME: ${{ vars.IMAGE_NAME }}
+  LISTENING_PORT: ${{ vars.LISTENING_PORT }}
   IBM_CLOUD_API_KEY: ${{ secrets.IBM_CLOUD_API_KEY }}
 
 jobs:
@@ -102,6 +103,7 @@ jobs:
             --name "${CE_APP_NAME}" \
             --image "${DEPLOY_IMAGE}" \
             --registry-secret "${REG_SECRET}" \
+            --port "${LISTENING_PORT}" \
             --max-scale 1 \
             --min-scale 1 \
             --cpu 0.125 \
