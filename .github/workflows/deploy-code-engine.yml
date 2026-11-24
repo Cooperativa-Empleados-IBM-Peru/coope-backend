@@ -108,6 +108,7 @@ jobs:
             --min-scale 1 \
             --cpu 0.125 \
             --memory 0.25G \
+            --cluster-local true \
             --env-from-configmap DB2_=db2-configmap \
             --env-from-secret DB2_=db2-secret \
             --env-from-configmap CLOUDANT_=cloudant-configmap \
