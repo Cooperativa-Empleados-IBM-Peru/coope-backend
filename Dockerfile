@@ -1,7 +1,7 @@
 # ---------------------------------------------------------------------------
 # Build stage: compilers + dev dependencies live only here
 # ---------------------------------------------------------------------------
-FROM registry.access.redhat.com/ubi10/nodejs-22:latest AS build
+FROM registry.access.redhat.com/ubi10/nodejs-22:10.3 AS build
 
 # Build toolchain for native modules (ibm_db)
 USER root
@@ -26,7 +26,7 @@ RUN npm run build && npm prune --omit=dev
 # ---------------------------------------------------------------------------
 # Runtime stage: no compilers, no dev dependencies, no sources
 # ---------------------------------------------------------------------------
-FROM registry.access.redhat.com/ubi10/nodejs-22-minimal:latest
+FROM registry.access.redhat.com/ubi10/nodejs-22-minimal:10.3
 
 USER root
 RUN microdnf upgrade -y --refresh --nodocs && \
