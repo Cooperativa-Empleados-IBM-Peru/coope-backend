@@ -8,9 +8,7 @@ export class CuentasdetallesRepository extends DefaultCrudRepository<
   typeof Cuentasdetalles.prototype.uuid,
   CuentasdetallesRelations
 > {
-  constructor(
-    @inject('datasources.db2coope') dataSource: Db2CoopeDataSource,
-  ) {
+  constructor(@inject('datasources.db2coope') dataSource: Db2CoopeDataSource) {
     super(Cuentasdetalles, dataSource);
   }
 }

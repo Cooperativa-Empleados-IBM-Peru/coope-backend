@@ -3,7 +3,10 @@ import {repository} from '@loopback/repository';
 import {HttpErrors, post, requestBody, RequestBodyObject} from '@loopback/rest';
 import {Db2CoopeDataSource} from '../datasources';
 import {db2config} from '../datasources/env';
-import {VwcoopeadminsRepository, VwsociosactivosRepository} from '../repositories';
+import {
+  VwcoopeadminsRepository,
+  VwsociosactivosRepository,
+} from '../repositories';
 
 const IDENTIFIER = /^[A-Za-z_][A-Za-z0-9_]*$/;
 
@@ -56,7 +59,9 @@ export class UsersController {
       },
     },
   })
-  async login(@requestBody(EMAIL_BODY) body: {email: string}): Promise<LoginInfo> {
+  async login(
+    @requestBody(EMAIL_BODY) body: {email: string},
+  ): Promise<LoginInfo> {
     const email = this.cleanEmail(body.email);
 
     await this.registerLogin(email);

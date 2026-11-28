@@ -1,11 +1,5 @@
-import {
-  FilterExcludingWhere,
-  repository
-} from '@loopback/repository';
-import {
-  get,
-  getModelSchemaRef, param
-} from '@loopback/rest';
+import {FilterExcludingWhere, repository} from '@loopback/repository';
+import {get, getModelSchemaRef, param} from '@loopback/rest';
 import {Planpagostotalcancelados} from '../models';
 import {PlanpagostotalcanceladosRepository} from '../repositories';
 
@@ -13,7 +7,7 @@ export class PlanpagostotalcandeladosController {
   constructor(
     @repository(PlanpagostotalcanceladosRepository)
     public planpagostotalcanceladosRepository: PlanpagostotalcanceladosRepository,
-  ) { }
+  ) {}
   /*
     @get('/planpagostotalcancelados/count', {
       responses: {
@@ -57,7 +51,9 @@ export class PlanpagostotalcandeladosController {
         description: 'Planpagostotalcancelados model instance',
         content: {
           'application/json': {
-            schema: getModelSchemaRef(Planpagostotalcancelados, {includeRelations: true}),
+            schema: getModelSchemaRef(Planpagostotalcancelados, {
+              includeRelations: true,
+            }),
           },
         },
       },
@@ -65,9 +61,9 @@ export class PlanpagostotalcandeladosController {
   })
   async findById(
     @param.path.string('id') id: string,
-    @param.filter(Planpagostotalcancelados, {exclude: 'where'}) filter?: FilterExcludingWhere<Planpagostotalcancelados>
+    @param.filter(Planpagostotalcancelados, {exclude: 'where'})
+    filter?: FilterExcludingWhere<Planpagostotalcancelados>,
   ): Promise<Planpagostotalcancelados> {
     return this.planpagostotalcanceladosRepository.findById(id, filter);
   }
-
 }

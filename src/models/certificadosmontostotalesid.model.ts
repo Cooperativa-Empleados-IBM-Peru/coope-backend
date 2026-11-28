@@ -4,8 +4,8 @@ import {db2config} from '../datasources/env';
 @model({
   settings: {
     idInjection: false,
-    db2: {schema: db2config.schema, table: 'CERTIFICADOSMONTOSTOTALESID'}
-  }
+    db2: {schema: db2config.schema, table: 'CERTIFICADOSMONTOSTOTALESID'},
+  },
 })
 export class Certificadosmontostotalesid extends Entity {
   @property({
@@ -13,7 +13,14 @@ export class Certificadosmontostotalesid extends Entity {
     length: 8,
     //  precision: ,
     scale: 0,
-    db2: {columnName: 'CERTSOLMONTOS', dataType: 'DOUBLE', dataLength: 8, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'CERTSOLMONTOS',
+      dataType: 'DOUBLE',
+      dataLength: 8,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   certsolmontos?: number;
 
@@ -22,7 +29,14 @@ export class Certificadosmontostotalesid extends Entity {
     length: 8,
     //  precision: ,
     scale: 0,
-    db2: {columnName: 'CERTSOLVALOR', dataType: 'DOUBLE', dataLength: 8, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'CERTSOLVALOR',
+      dataType: 'DOUBLE',
+      dataLength: 8,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   certsolvalor?: number;
 
@@ -31,7 +45,14 @@ export class Certificadosmontostotalesid extends Entity {
     length: 8,
     //  precision: ,
     scale: 0,
-    db2: {columnName: 'CERTUSDMONTOS', dataType: 'DOUBLE', dataLength: 8, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'CERTUSDMONTOS',
+      dataType: 'DOUBLE',
+      dataLength: 8,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   certusdmontos?: number;
 
@@ -40,7 +61,14 @@ export class Certificadosmontostotalesid extends Entity {
     length: 8,
     //  precision: ,
     scale: 0,
-    db2: {columnName: 'CERTUSDVALOR', dataType: 'DOUBLE', dataLength: 8, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'CERTUSDVALOR',
+      dataType: 'DOUBLE',
+      dataLength: 8,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   certusdvalor?: number;
 
@@ -49,7 +77,14 @@ export class Certificadosmontostotalesid extends Entity {
     length: 8,
     //  precision: ,
     scale: 0,
-    db2: {columnName: 'CTSSOLMONTOS', dataType: 'DOUBLE', dataLength: 8, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'CTSSOLMONTOS',
+      dataType: 'DOUBLE',
+      dataLength: 8,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   ctssolmontos?: number;
 
@@ -58,7 +93,14 @@ export class Certificadosmontostotalesid extends Entity {
     length: 8,
     //  precision: ,
     scale: 0,
-    db2: {columnName: 'CTSSOLVALOR', dataType: 'DOUBLE', dataLength: 8, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'CTSSOLVALOR',
+      dataType: 'DOUBLE',
+      dataLength: 8,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   ctssolvalor?: number;
 
@@ -67,7 +109,14 @@ export class Certificadosmontostotalesid extends Entity {
     length: 8,
     //  precision: ,
     scale: 0,
-    db2: {columnName: 'CTSUSDMONTOS', dataType: 'DOUBLE', dataLength: 8, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'CTSUSDMONTOS',
+      dataType: 'DOUBLE',
+      dataLength: 8,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   ctsusdmontos?: number;
 
@@ -76,7 +125,14 @@ export class Certificadosmontostotalesid extends Entity {
     length: 8,
     //  precision: ,
     scale: 0,
-    db2: {columnName: 'CTSUSDVALOR', dataType: 'DOUBLE', dataLength: 8, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'CTSUSDVALOR',
+      dataType: 'DOUBLE',
+      dataLength: 8,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   ctsusdvalor?: number;
 
@@ -88,7 +144,14 @@ export class Certificadosmontostotalesid extends Entity {
     id: 1,
     //  precision: ,
     scale: 0,
-    db2: {columnName: 'UUID', dataType: 'CHARACTER', dataLength: 40, dataPrecision: undefined, dataScale: 0, nullable: 'N'},
+    db2: {
+      columnName: 'UUID',
+      dataType: 'CHARACTER',
+      dataLength: 40,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'N',
+    },
   })
   uuid: string;
 
@@ -107,4 +170,5 @@ export interface CertificadosmontostotalesidRelations {
   // describe navigational properties here
 }
 
-export type CertificadosmontostotalesidWithRelations = Certificadosmontostotalesid & CertificadosmontostotalesidRelations;
+export type CertificadosmontostotalesidWithRelations =
+  Certificadosmontostotalesid & CertificadosmontostotalesidRelations;

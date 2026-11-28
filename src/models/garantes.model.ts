@@ -1,7 +1,12 @@
 import {Entity, model, property} from '@loopback/repository';
 import {db2config} from '../datasources/env';
 
-@model({settings: {idInjection: false, db2: {schema: db2config.schema, table: 'GARANTES'}}})
+@model({
+  settings: {
+    idInjection: false,
+    db2: {schema: db2config.schema, table: 'GARANTES'},
+  },
+})
 export class Garantes extends Entity {
   @property({
     type: 'string',
@@ -10,7 +15,14 @@ export class Garantes extends Entity {
     // precision: ,
     scale: 0,
     id: 1,
-    db2: {columnName: 'CODEMPLEADO', dataType: 'CHARACTER', dataLength: 15, dataPrecision: undefined, dataScale: 0, nullable: 'N'},
+    db2: {
+      columnName: 'CODEMPLEADO',
+      dataType: 'CHARACTER',
+      dataLength: 15,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'N',
+    },
   })
   codempleado: string;
 
@@ -19,7 +31,14 @@ export class Garantes extends Entity {
     length: 13,
     // precision: ,
     scale: 12,
-    db2: {columnName: 'FECMODIFICACION', dataType: 'TIMESTAMP', dataLength: 13, dataPrecision: undefined, dataScale: 12, nullable: 'Y'},
+    db2: {
+      columnName: 'FECMODIFICACION',
+      dataType: 'TIMESTAMP',
+      dataLength: 13,
+      dataPrecision: undefined,
+      dataScale: 12,
+      nullable: 'Y',
+    },
   })
   fecmodificacion?: string;
 
@@ -29,7 +48,14 @@ export class Garantes extends Entity {
     length: 5,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'IDMOVIMIENTO', dataType: 'CHARACTER', dataLength: 5, dataPrecision: undefined, dataScale: 0, nullable: 'N'},
+    db2: {
+      columnName: 'IDMOVIMIENTO',
+      dataType: 'CHARACTER',
+      dataLength: 5,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'N',
+    },
   })
   idmovimiento: string;
 
@@ -40,7 +66,14 @@ export class Garantes extends Entity {
     // precision: ,
     scale: 0,
     id: 2,
-    db2: {columnName: 'NUMOPERACION', dataType: 'CHARACTER', dataLength: 15, dataPrecision: undefined, dataScale: 0, nullable: 'N'},
+    db2: {
+      columnName: 'NUMOPERACION',
+      dataType: 'CHARACTER',
+      dataLength: 15,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'N',
+    },
   })
   numoperacion: string;
 
@@ -50,7 +83,14 @@ export class Garantes extends Entity {
     length: 3,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'TIPODOC', dataType: 'CHARACTER', dataLength: 3, dataPrecision: undefined, dataScale: 0, nullable: 'N'},
+    db2: {
+      columnName: 'TIPODOC',
+      dataType: 'CHARACTER',
+      dataLength: 3,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'N',
+    },
   })
   tipodoc: string;
 

@@ -4,21 +4,43 @@ import {
   Filter,
   FilterExcludingWhere,
   repository,
-  Where
+  Where,
 } from '@loopback/repository';
 import {
-  del, get,
-  getModelSchemaRef, HttpErrors, param,
-  patch, post,
-  put, requestBody
+  del,
+  get,
+  getModelSchemaRef,
+  HttpErrors,
+  param,
+  patch,
+  post,
+  put,
+  requestBody,
 } from '@loopback/rest';
 import {Coopesocios} from '../models';
 import {CoopesociosRepository} from '../repositories';
 
 const PERSONAL_FIELDS = [
-  'TIPDID', 'DOCIDE', 'APEPAT', 'APEMAT', 'NOMBRE', 'DIRECC', 'LOCALI',
-  'PROVIN', 'DEPART', 'NCOMPL', 'NOMBC2', 'TELCEL', 'NACION', 'CCIUDA',
-  'NOMCON', 'DNICY', 'ESTCIV', 'CARGAM', 'OFICIO', 'SECTO1',
+  'TIPDID',
+  'DOCIDE',
+  'APEPAT',
+  'APEMAT',
+  'NOMBRE',
+  'DIRECC',
+  'LOCALI',
+  'PROVIN',
+  'DEPART',
+  'NCOMPL',
+  'NOMBC2',
+  'TELCEL',
+  'NACION',
+  'CCIUDA',
+  'NOMCON',
+  'DNICY',
+  'ESTCIV',
+  'CARGAM',
+  'OFICIO',
+  'SECTO1',
 ] as const;
 
 export class CoopesociosController {
@@ -41,7 +63,6 @@ export class CoopesociosController {
         'application/json': {
           schema: getModelSchemaRef(Coopesocios, {
             title: 'NewCoopesocios',
-
           }),
         },
       },
@@ -76,7 +97,10 @@ export class CoopesociosController {
             schema: {
               type: 'object',
               properties: Object.fromEntries(
-                ['DOCUME', ...PERSONAL_FIELDS].map((f) => [f, {type: 'string', nullable: true}])
+                ['DOCUME', ...PERSONAL_FIELDS].map(f => [
+                  f,
+                  {type: 'string', nullable: true},
+                ]),
               ),
             },
           },
@@ -116,7 +140,9 @@ export class CoopesociosController {
     const socio = matches.find(s => s.codempleado?.trim() === key);
 
     if (!socio) {
-      throw new HttpErrors.NotFound(`Socio con código ${key} no encontrado en db2`);
+      throw new HttpErrors.NotFound(
+        `Socio con código ${key} no encontrado en db2`,
+      );
     }
 
     return this.pickPersonal(socio);
@@ -192,7 +218,8 @@ export class CoopesociosController {
   })
   async findById(
     @param.path.string('id') id: string,
-    @param.filter(Coopesocios, {exclude: 'where'}) filter?: FilterExcludingWhere<Coopesocios>
+    @param.filter(Coopesocios, {exclude: 'where'})
+    filter?: FilterExcludingWhere<Coopesocios>,
   ): Promise<Coopesocios> {
     return this.coopesociosRepository.findById(id, filter);
   }
@@ -242,5 +269,4 @@ export class CoopesociosController {
   async deleteById(@param.path.string('id') id: string): Promise<void> {
     await this.coopesociosRepository.deleteById(id);
   }
-
 }

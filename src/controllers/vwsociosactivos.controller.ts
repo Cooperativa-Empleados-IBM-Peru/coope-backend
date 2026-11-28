@@ -1,11 +1,5 @@
-import {
-  FilterExcludingWhere,
-  repository
-} from '@loopback/repository';
-import {
-  get,
-  getModelSchemaRef, param
-} from '@loopback/rest';
+import {FilterExcludingWhere, repository} from '@loopback/repository';
+import {get, getModelSchemaRef, param} from '@loopback/rest';
 import {Vwsociosactivos} from '../models';
 import {VwsociosactivosRepository} from '../repositories';
 
@@ -13,7 +7,7 @@ export class VwsociosactivosController {
   constructor(
     @repository(VwsociosactivosRepository)
     public vwsociosactivosRepository: VwsociosactivosRepository,
-  ) { }
+  ) {}
 
   /*
     @get('/vwsociosactivos/count', {
@@ -59,7 +53,9 @@ export class VwsociosactivosController {
         description: 'Vwsociosactivos model instance',
         content: {
           'application/json': {
-            schema: getModelSchemaRef(Vwsociosactivos, {includeRelations: true}),
+            schema: getModelSchemaRef(Vwsociosactivos, {
+              includeRelations: true,
+            }),
           },
         },
       },
@@ -67,10 +63,9 @@ export class VwsociosactivosController {
   })
   async findById(
     @param.path.string('id') id: string,
-    @param.filter(Vwsociosactivos, {exclude: 'where'}) filter?: FilterExcludingWhere<Vwsociosactivos>
+    @param.filter(Vwsociosactivos, {exclude: 'where'})
+    filter?: FilterExcludingWhere<Vwsociosactivos>,
   ): Promise<Vwsociosactivos> {
     return this.vwsociosactivosRepository.findById(id, filter);
   }
-
-
 }

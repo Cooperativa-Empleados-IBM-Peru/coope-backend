@@ -27,7 +27,9 @@ describe('assertSafeFilter (SQL injection hardening)', () => {
   ];
   for (const order of maliciousOrders) {
     it(`rejects order ${JSON.stringify(order)}`, () => {
-      expect(() => assertSafeFilter({order: [order]})).to.throw(/Invalid filter: order/);
+      expect(() => assertSafeFilter({order: [order]})).to.throw(
+        /Invalid filter: order/,
+      );
     });
   }
 
@@ -39,7 +41,9 @@ describe('assertSafeFilter (SQL injection hardening)', () => {
   const badNumbers: unknown[] = [-1, 1.5, '1; DROP', 'abc', {}, [1], true];
   for (const value of badNumbers) {
     it(`rejects limit ${JSON.stringify(value)}`, () => {
-      expect(() => assertSafeFilter({limit: value})).to.throw(/Invalid filter: limit/);
+      expect(() => assertSafeFilter({limit: value})).to.throw(
+        /Invalid filter: limit/,
+      );
     });
   }
 

@@ -16,13 +16,18 @@ describe('Filter sanitizer (acceptance)', () => {
   });
 
   it('rejects a malicious order with 400 before reaching the database', async () => {
-    const filter = JSON.stringify({where: {codempleado: '1'}, order: ['cuota ASC; DROP TABLE x']});
+    const filter = JSON.stringify({
+      where: {codempleado: '1'},
+      order: ['cuota ASC; DROP TABLE x'],
+    });
     const res = await client.get('/vwsociosibm').query({filter}).expect(400);
     expect(JSON.stringify(res.body)).to.match(/Invalid filter: order/);
   });
 
   it('rejects a malicious order on another controller', async () => {
-    const filter = JSON.stringify({order: ['x ASC, (SELECT 1 FROM SYSIBM.SYSDUMMY1)']});
+    const filter = JSON.stringify({
+      order: ['x ASC, (SELECT 1 FROM SYSIBM.SYSDUMMY1)'],
+    });
     await client.get('/movahorros').query({filter}).expect(400);
   });
 });

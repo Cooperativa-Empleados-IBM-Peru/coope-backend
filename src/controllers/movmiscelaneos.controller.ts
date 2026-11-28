@@ -1,12 +1,5 @@
-import {
-  Filter,
-  FilterExcludingWhere,
-  repository
-} from '@loopback/repository';
-import {
-  get,
-  getModelSchemaRef, param
-} from '@loopback/rest';
+import {Filter, FilterExcludingWhere, repository} from '@loopback/repository';
+import {get, getModelSchemaRef, param} from '@loopback/rest';
 import {Movmiscelaneos} from '../models';
 import {MovmiscelaneosRepository} from '../repositories';
 
@@ -14,7 +7,7 @@ export class MovmiscelaneosController {
   constructor(
     @repository(MovmiscelaneosRepository)
     public movmiscelaneosRepository: MovmiscelaneosRepository,
-  ) { }
+  ) {}
 
   /*
     @get('/movmiscelaneos/count', {
@@ -39,7 +32,9 @@ export class MovmiscelaneosController {
           'application/json': {
             schema: {
               type: 'array',
-              items: getModelSchemaRef(Movmiscelaneos, {includeRelations: true}),
+              items: getModelSchemaRef(Movmiscelaneos, {
+                includeRelations: true,
+              }),
             },
           },
         },
@@ -51,7 +46,6 @@ export class MovmiscelaneosController {
   ): Promise<Movmiscelaneos[]> {
     return this.movmiscelaneosRepository.find(filter);
   }
-
 
   @get('/movmiscelaneos/{id}', {
     responses: {
@@ -67,10 +61,9 @@ export class MovmiscelaneosController {
   })
   async findById(
     @param.path.string('id') id: string,
-    @param.filter(Movmiscelaneos, {exclude: 'where'}) filter?: FilterExcludingWhere<Movmiscelaneos>
+    @param.filter(Movmiscelaneos, {exclude: 'where'})
+    filter?: FilterExcludingWhere<Movmiscelaneos>,
   ): Promise<Movmiscelaneos> {
     return this.movmiscelaneosRepository.findById(id, filter);
   }
-
-
 }

@@ -1,12 +1,5 @@
-import {
-  Filter,
-  FilterExcludingWhere,
-  repository
-} from '@loopback/repository';
-import {
-  get,
-  getModelSchemaRef, param
-} from '@loopback/rest';
+import {Filter, FilterExcludingWhere, repository} from '@loopback/repository';
+import {get, getModelSchemaRef, param} from '@loopback/rest';
 import {Prlargoplazo} from '../models';
 import {PrlargoplazoRepository} from '../repositories';
 
@@ -14,7 +7,7 @@ export class PrlargoplazoController {
   constructor(
     @repository(PrlargoplazoRepository)
     public prlargoplazoRepository: PrlargoplazoRepository,
-  ) { }
+  ) {}
   /*
     @get('/prlargoplazo/count', {
       responses: {
@@ -51,7 +44,6 @@ export class PrlargoplazoController {
     return this.prlargoplazoRepository.find(filter);
   }
 
-
   @get('/prlargoplazo/{id}', {
     responses: {
       '200': {
@@ -66,9 +58,9 @@ export class PrlargoplazoController {
   })
   async findById(
     @param.path.string('id') id: string,
-    @param.filter(Prlargoplazo, {exclude: 'where'}) filter?: FilterExcludingWhere<Prlargoplazo>
+    @param.filter(Prlargoplazo, {exclude: 'where'})
+    filter?: FilterExcludingWhere<Prlargoplazo>,
   ): Promise<Prlargoplazo> {
     return this.prlargoplazoRepository.findById(id, filter);
   }
-
 }

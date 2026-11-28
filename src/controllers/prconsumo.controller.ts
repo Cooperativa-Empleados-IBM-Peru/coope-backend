@@ -1,12 +1,5 @@
-import {
-  Filter,
-  FilterExcludingWhere,
-  repository
-} from '@loopback/repository';
-import {
-  get,
-  getModelSchemaRef, param
-} from '@loopback/rest';
+import {Filter, FilterExcludingWhere, repository} from '@loopback/repository';
+import {get, getModelSchemaRef, param} from '@loopback/rest';
 import {Prconsumo} from '../models';
 import {PrconsumoRepository} from '../repositories';
 
@@ -14,7 +7,7 @@ export class PrconsumoController {
   constructor(
     @repository(PrconsumoRepository)
     public prconsumoRepository: PrconsumoRepository,
-  ) { }
+  ) {}
 
   /*
     @get('/prconsumo/count', {
@@ -52,7 +45,6 @@ export class PrconsumoController {
     return this.prconsumoRepository.find(filter);
   }
 
-
   @get('/prconsumo/{id}', {
     responses: {
       '200': {
@@ -67,10 +59,9 @@ export class PrconsumoController {
   })
   async findById(
     @param.path.string('id') id: string,
-    @param.filter(Prconsumo, {exclude: 'where'}) filter?: FilterExcludingWhere<Prconsumo>
+    @param.filter(Prconsumo, {exclude: 'where'})
+    filter?: FilterExcludingWhere<Prconsumo>,
   ): Promise<Prconsumo> {
     return this.prconsumoRepository.findById(id, filter);
   }
-
-
 }

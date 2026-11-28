@@ -8,9 +8,7 @@ export class VwmasterlookupRepository extends DefaultCrudRepository<
   typeof Vwmasterlookup.prototype.uuid,
   VwmasterlookupRelations
 > {
-  constructor(
-    @inject('datasources.db2coope') dataSource: Db2CoopeDataSource,
-  ) {
+  constructor(@inject('datasources.db2coope') dataSource: Db2CoopeDataSource) {
     super(Vwmasterlookup, dataSource);
   }
 }

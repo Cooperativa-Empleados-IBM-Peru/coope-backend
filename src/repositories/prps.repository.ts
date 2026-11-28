@@ -7,10 +7,8 @@ export class PrpsRepository extends DefaultCrudRepository<
   Prps,
   typeof Prps.prototype.id,
   PrpsRelations
-  > {
-  constructor(
-    @inject('datasources.db2coope') dataSource: Db2CoopeDataSource,
-  ) {
+> {
+  constructor(@inject('datasources.db2coope') dataSource: Db2CoopeDataSource) {
     super(Prps, dataSource);
   }
 }

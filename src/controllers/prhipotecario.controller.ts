@@ -1,12 +1,5 @@
-import {
-  Filter,
-  FilterExcludingWhere,
-  repository
-} from '@loopback/repository';
-import {
-  get,
-  getModelSchemaRef, param
-} from '@loopback/rest';
+import {Filter, FilterExcludingWhere, repository} from '@loopback/repository';
+import {get, getModelSchemaRef, param} from '@loopback/rest';
 import {Prhipotecario} from '../models';
 import {PrhipotecarioRepository} from '../repositories';
 
@@ -14,7 +7,7 @@ export class PrhipotecarioController {
   constructor(
     @repository(PrhipotecarioRepository)
     public prhipotecarioRepository: PrhipotecarioRepository,
-  ) { }
+  ) {}
   /*
     @get('/prhipotecario/count', {
       responses: {
@@ -51,7 +44,6 @@ export class PrhipotecarioController {
     return this.prhipotecarioRepository.find(filter);
   }
 
-
   @get('/prhipotecario/{id}', {
     responses: {
       '200': {
@@ -66,9 +58,9 @@ export class PrhipotecarioController {
   })
   async findById(
     @param.path.string('id') id: string,
-    @param.filter(Prhipotecario, {exclude: 'where'}) filter?: FilterExcludingWhere<Prhipotecario>
+    @param.filter(Prhipotecario, {exclude: 'where'})
+    filter?: FilterExcludingWhere<Prhipotecario>,
   ): Promise<Prhipotecario> {
     return this.prhipotecarioRepository.findById(id, filter);
   }
-
 }

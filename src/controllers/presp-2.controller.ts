@@ -1,12 +1,5 @@
-import {
-  Filter,
-  FilterExcludingWhere,
-  repository
-} from '@loopback/repository';
-import {
-  get,
-  getModelSchemaRef, param
-} from '@loopback/rest';
+import {Filter, FilterExcludingWhere, repository} from '@loopback/repository';
+import {get, getModelSchemaRef, param} from '@loopback/rest';
 import {Presp2} from '../models';
 import {Presp2Repository} from '../repositories';
 
@@ -14,7 +7,7 @@ export class Presp2Controller {
   constructor(
     @repository(Presp2Repository)
     public presp2Repository: Presp2Repository,
-  ) { }
+  ) {}
   /*
     @get('/presp2/count', {
       responses: {
@@ -45,12 +38,9 @@ export class Presp2Controller {
       },
     },
   })
-  async find(
-    @param.filter(Presp2) filter?: Filter<Presp2>,
-  ): Promise<Presp2[]> {
+  async find(@param.filter(Presp2) filter?: Filter<Presp2>): Promise<Presp2[]> {
     return this.presp2Repository.find(filter);
   }
-
 
   @get('/presp2/{id}', {
     responses: {
@@ -66,9 +56,9 @@ export class Presp2Controller {
   })
   async findById(
     @param.path.string('id') id: string,
-    @param.filter(Presp2, {exclude: 'where'}) filter?: FilterExcludingWhere<Presp2>
+    @param.filter(Presp2, {exclude: 'where'})
+    filter?: FilterExcludingWhere<Presp2>,
   ): Promise<Presp2> {
     return this.presp2Repository.findById(id, filter);
   }
-
 }

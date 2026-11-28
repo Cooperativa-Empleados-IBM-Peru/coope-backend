@@ -8,9 +8,7 @@ export class PlanpagospendientesRepository extends DefaultCrudRepository<
   typeof Planpagospendientes.prototype.cuota,
   PlanpagospendientesRelations
 > {
-  constructor(
-    @inject('datasources.db2coope') dataSource: Db2CoopeDataSource,
-  ) {
+  constructor(@inject('datasources.db2coope') dataSource: Db2CoopeDataSource) {
     super(Planpagospendientes, dataSource);
   }
 }

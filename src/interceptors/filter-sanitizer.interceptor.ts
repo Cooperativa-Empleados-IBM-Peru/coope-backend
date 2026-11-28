@@ -18,7 +18,8 @@ function invalid(what: string): never {
 
 function assertNonNegativeInteger(value: unknown, what: string): void {
   if (value === undefined || value === null) return;
-  const n = typeof value === 'string' && value.trim() !== '' ? Number(value) : value;
+  const n =
+    typeof value === 'string' && value.trim() !== '' ? Number(value) : value;
   if (typeof n !== 'number' || !Number.isInteger(n) || n < 0) invalid(what);
 }
 

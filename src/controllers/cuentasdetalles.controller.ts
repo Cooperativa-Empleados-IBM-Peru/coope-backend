@@ -1,12 +1,5 @@
-import {
-  FilterExcludingWhere,
-  repository
-} from '@loopback/repository';
-import {
-  get,
-  getModelSchemaRef, param,
-  response
-} from '@loopback/rest';
+import {FilterExcludingWhere, repository} from '@loopback/repository';
+import {get, getModelSchemaRef, param, response} from '@loopback/rest';
 import {Cuentasdetalles} from '../models';
 import {CuentasdetallesRepository} from '../repositories';
 
@@ -14,7 +7,7 @@ export class CuentasdetallesController {
   constructor(
     @repository(CuentasdetallesRepository)
     public cuentasdetallesRepository: CuentasdetallesRepository,
-  ) { }
+  ) {}
   /*
     @post('/cuentasdetalles')
     @response(200, {
@@ -96,7 +89,8 @@ export class CuentasdetallesController {
   })
   async findById(
     @param.path.string('id') id: string,
-    @param.filter(Cuentasdetalles, {exclude: 'where'}) filter?: FilterExcludingWhere<Cuentasdetalles>
+    @param.filter(Cuentasdetalles, {exclude: 'where'})
+    filter?: FilterExcludingWhere<Cuentasdetalles>,
   ): Promise<Cuentasdetalles> {
     return this.cuentasdetallesRepository.findById(id, filter);
   }

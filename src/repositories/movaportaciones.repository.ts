@@ -8,9 +8,7 @@ export class MovaportacionesRepository extends DefaultCrudRepository<
   typeof Movaportaciones.prototype.codempresa,
   MovaportacionesRelations
 > {
-  constructor(
-    @inject('datasources.db2coope') dataSource: Db2CoopeDataSource,
-  ) {
+  constructor(@inject('datasources.db2coope') dataSource: Db2CoopeDataSource) {
     super(Movaportaciones, dataSource);
   }
 }

@@ -2,7 +2,10 @@ import {Entity, model, property} from '@loopback/repository';
 import {db2config} from '../datasources/env';
 
 @model({
-  settings: {idInjection: false, db2: {schema: db2config.schema, table: 'CUENTASDETALLES'}}
+  settings: {
+    idInjection: false,
+    db2: {schema: db2config.schema, table: 'CUENTASDETALLES'},
+  },
 })
 export class Cuentasdetalles extends Entity {
   @property({
@@ -10,7 +13,14 @@ export class Cuentasdetalles extends Entity {
     length: 8,
     //  precision: ,
     scale: 0,
-    db2: {columnName: 'INTAHORROMESSOL', dataType: 'DOUBLE', dataLength: 8, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'INTAHORROMESSOL',
+      dataType: 'DOUBLE',
+      dataLength: 8,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   intahorromessol?: number;
 
@@ -19,7 +29,14 @@ export class Cuentasdetalles extends Entity {
     length: 8,
     //  precision: ,
     scale: 0,
-    db2: {columnName: 'INTAHORROMESUSD', dataType: 'DOUBLE', dataLength: 8, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'INTAHORROMESUSD',
+      dataType: 'DOUBLE',
+      dataLength: 8,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   intahorromesusd?: number;
 
@@ -28,7 +45,14 @@ export class Cuentasdetalles extends Entity {
     length: 8,
     //  precision: ,
     scale: 0,
-    db2: {columnName: 'INTMISCELANEOMESSOL', dataType: 'DOUBLE', dataLength: 8, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'INTMISCELANEOMESSOL',
+      dataType: 'DOUBLE',
+      dataLength: 8,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   intmiscelaneomessol?: number;
 
@@ -37,7 +61,14 @@ export class Cuentasdetalles extends Entity {
     length: 8,
     //  precision: ,
     scale: 0,
-    db2: {columnName: 'INTMISCELANEOMESUSD', dataType: 'DOUBLE', dataLength: 8, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'INTMISCELANEOMESUSD',
+      dataType: 'DOUBLE',
+      dataLength: 8,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   intmiscelaneomesusd?: number;
 
@@ -46,7 +77,14 @@ export class Cuentasdetalles extends Entity {
     length: 8,
     //  precision: ,
     scale: 0,
-    db2: {columnName: 'SALDOAPORTACIONSOL', dataType: 'DOUBLE', dataLength: 8, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'SALDOAPORTACIONSOL',
+      dataType: 'DOUBLE',
+      dataLength: 8,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   saldoaportacionsol?: number;
 
@@ -55,7 +93,14 @@ export class Cuentasdetalles extends Entity {
     length: 8,
     //  precision: ,
     scale: 0,
-    db2: {columnName: 'SALDOAPORTACIONUSD', dataType: 'DOUBLE', dataLength: 8, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'SALDOAPORTACIONUSD',
+      dataType: 'DOUBLE',
+      dataLength: 8,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   saldoaportacionusd?: number;
 
@@ -64,7 +109,14 @@ export class Cuentasdetalles extends Entity {
     length: 8,
     //  precision: ,
     scale: 0,
-    db2: {columnName: 'SALDOBLOQUEOAHORROSOL', dataType: 'DOUBLE', dataLength: 8, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'SALDOBLOQUEOAHORROSOL',
+      dataType: 'DOUBLE',
+      dataLength: 8,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   saldobloqueoahorrosol?: number;
 
@@ -73,7 +125,14 @@ export class Cuentasdetalles extends Entity {
     length: 8,
     //  precision: ,
     scale: 0,
-    db2: {columnName: 'SALDOBLOQUEOAHORROUSD', dataType: 'DOUBLE', dataLength: 8, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'SALDOBLOQUEOAHORROUSD',
+      dataType: 'DOUBLE',
+      dataLength: 8,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   saldobloqueoahorrousd?: number;
 
@@ -82,7 +141,14 @@ export class Cuentasdetalles extends Entity {
     length: 8,
     //  precision: ,
     scale: 0,
-    db2: {columnName: 'SALDOCONTABLESOL', dataType: 'DOUBLE', dataLength: 8, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'SALDOCONTABLESOL',
+      dataType: 'DOUBLE',
+      dataLength: 8,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   saldocontablesol?: number;
 
@@ -91,7 +157,14 @@ export class Cuentasdetalles extends Entity {
     length: 8,
     //  precision: ,
     scale: 0,
-    db2: {columnName: 'SALDOCONTABLEUSD', dataType: 'DOUBLE', dataLength: 8, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'SALDOCONTABLEUSD',
+      dataType: 'DOUBLE',
+      dataLength: 8,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   saldocontableusd?: number;
 
@@ -100,7 +173,14 @@ export class Cuentasdetalles extends Entity {
     length: 8,
     //  precision: ,
     scale: 0,
-    db2: {columnName: 'SALDODISPAHORROSOL', dataType: 'DOUBLE', dataLength: 8, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'SALDODISPAHORROSOL',
+      dataType: 'DOUBLE',
+      dataLength: 8,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   saldodispahorrosol?: number;
 
@@ -109,7 +189,14 @@ export class Cuentasdetalles extends Entity {
     length: 8,
     //  precision: ,
     scale: 0,
-    db2: {columnName: 'SALDOMISCELANEOSOL', dataType: 'DOUBLE', dataLength: 8, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'SALDOMISCELANEOSOL',
+      dataType: 'DOUBLE',
+      dataLength: 8,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   saldomiscelaneosol?: number;
 
@@ -118,7 +205,14 @@ export class Cuentasdetalles extends Entity {
     length: 8,
     //  precision: ,
     scale: 0,
-    db2: {columnName: 'SALDOMISCELANEOUSD', dataType: 'DOUBLE', dataLength: 8, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'SALDOMISCELANEOUSD',
+      dataType: 'DOUBLE',
+      dataLength: 8,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   saldomiscelaneousd?: number;
 
@@ -127,7 +221,14 @@ export class Cuentasdetalles extends Entity {
     length: 8,
     //  precision: ,
     scale: 0,
-    db2: {columnName: 'SALDODISPAHORROUSD', dataType: 'DOUBLE', dataLength: 8, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'SALDODISPAHORROUSD',
+      dataType: 'DOUBLE',
+      dataLength: 8,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   saldodispahorrousd?: number;
 
@@ -139,7 +240,14 @@ export class Cuentasdetalles extends Entity {
     //  precision: ,
     id: 1,
     scale: 0,
-    db2: {columnName: 'UUID', dataType: 'CHARACTER', dataLength: 40, dataPrecision: undefined, dataScale: 0, nullable: 'N'},
+    db2: {
+      columnName: 'UUID',
+      dataType: 'CHARACTER',
+      dataLength: 40,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'N',
+    },
   })
   uuid: string;
 
@@ -158,4 +266,5 @@ export interface CuentasdetallesRelations {
   // describe navigational properties here
 }
 
-export type CuentasdetallesWithRelations = Cuentasdetalles & CuentasdetallesRelations;
+export type CuentasdetallesWithRelations = Cuentasdetalles &
+  CuentasdetallesRelations;

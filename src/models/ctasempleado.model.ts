@@ -2,7 +2,10 @@ import {Entity, model, property} from '@loopback/repository';
 import {db2config} from '../datasources/env';
 
 @model({
-  settings: {idInjection: false, db2: {schema: db2config.schema, table: 'CTASEMPLEADO'}}
+  settings: {
+    idInjection: false,
+    db2: {schema: db2config.schema, table: 'CTASEMPLEADO'},
+  },
 })
 export class Ctasempleado extends Entity {
   @property({
@@ -12,7 +15,14 @@ export class Ctasempleado extends Entity {
     length: 15,
     //   precision: ,
     scale: 0,
-    db2: {columnName: 'CODEMPLEADO', dataType: 'CHARACTER', dataLength: 15, dataPrecision: undefined, dataScale: 0, nullable: 'N'},
+    db2: {
+      columnName: 'CODEMPLEADO',
+      dataType: 'CHARACTER',
+      dataLength: 15,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'N',
+    },
   })
   codempleado: string;
 
@@ -24,7 +34,14 @@ export class Ctasempleado extends Entity {
     id: 1,
     //   precision: ,
     scale: 0,
-    db2: {columnName: 'UUID', dataType: 'CHARACTER', dataLength: 40, dataPrecision: undefined, dataScale: 0, nullable: 'N'},
+    db2: {
+      columnName: 'UUID',
+      dataType: 'CHARACTER',
+      dataLength: 40,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'N',
+    },
   })
   uuid: string;
 
@@ -34,7 +51,14 @@ export class Ctasempleado extends Entity {
     length: 10,
     //   precision: ,
     scale: 0,
-    db2: {columnName: 'CTASOLES', dataType: 'CHARACTER', dataLength: 10, dataPrecision: undefined, dataScale: 0, nullable: 'N'},
+    db2: {
+      columnName: 'CTASOLES',
+      dataType: 'CHARACTER',
+      dataLength: 10,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'N',
+    },
   })
   ctasoles: string;
 
@@ -44,7 +68,14 @@ export class Ctasempleado extends Entity {
     length: 10,
     //   precision: ,
     scale: 0,
-    db2: {columnName: 'CTAUSD', dataType: 'CHARACTER', dataLength: 10, dataPrecision: undefined, dataScale: 0, nullable: 'N'},
+    db2: {
+      columnName: 'CTAUSD',
+      dataType: 'CHARACTER',
+      dataLength: 10,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'N',
+    },
   })
   ctausd: string;
 

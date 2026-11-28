@@ -1,11 +1,5 @@
-import {
-  Filter,
-  repository
-} from '@loopback/repository';
-import {
-  get,
-  getModelSchemaRef, param
-} from '@loopback/rest';
+import {Filter, repository} from '@loopback/repository';
+import {get, getModelSchemaRef, param} from '@loopback/rest';
 import {Vwsociosinactivos} from '../models';
 import {VwsociosinactivosRepository} from '../repositories';
 
@@ -13,7 +7,7 @@ export class VwsociosinactivosController {
   constructor(
     @repository(VwsociosinactivosRepository)
     public vwsociosinactivosRepository: VwsociosinactivosRepository,
-  ) { }
+  ) {}
 
   /*
   @get('/vwsociosinactivos/count', {
@@ -39,7 +33,9 @@ export class VwsociosinactivosController {
           'application/json': {
             schema: {
               type: 'array',
-              items: getModelSchemaRef(Vwsociosinactivos, {includeRelations: true}),
+              items: getModelSchemaRef(Vwsociosinactivos, {
+                includeRelations: true,
+              }),
             },
           },
         },

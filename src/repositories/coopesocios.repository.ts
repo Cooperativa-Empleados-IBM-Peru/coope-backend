@@ -8,9 +8,7 @@ export class CoopesociosRepository extends DefaultCrudRepository<
   typeof Coopesocios.prototype.codempleado,
   CoopesociosRelations
 > {
-  constructor(
-    @inject('datasources.db2coope') dataSource: Db2CoopeDataSource,
-  ) {
+  constructor(@inject('datasources.db2coope') dataSource: Db2CoopeDataSource) {
     super(Coopesocios, dataSource);
   }
 }

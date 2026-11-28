@@ -8,9 +8,7 @@ export class VideosRepository extends DefaultCrudRepository<
   typeof Videos.prototype.codgenero,
   VideosRelations
 > {
-  constructor(
-    @inject('datasources.db2coope') dataSource: Db2CoopeDataSource,
-  ) {
+  constructor(@inject('datasources.db2coope') dataSource: Db2CoopeDataSource) {
     super(Videos, dataSource);
   }
 }

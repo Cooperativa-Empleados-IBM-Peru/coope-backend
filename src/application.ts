@@ -6,7 +6,7 @@ import {RestApplication} from '@loopback/rest';
 import {CrudRestComponent} from '@loopback/rest-crud';
 import {
   RestExplorerBindings,
-  RestExplorerComponent
+  RestExplorerComponent,
 } from '@loopback/rest-explorer';
 import {ServiceMixin} from '@loopback/service-proxy';
 import path from 'path';

@@ -57,7 +57,7 @@ export class CloudantController {
     return this.cloudant.request({
       method: 'GET',
       segments: [this.database(db), '_all_docs'],
-      query: includeDocs ? {include_docs: 'true'} : {},
+      query: includeDocs ? {['include_docs']: 'true'} : {},
     });
   }
 

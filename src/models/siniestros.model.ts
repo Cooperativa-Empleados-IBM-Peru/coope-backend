@@ -1,7 +1,12 @@
 import {Entity, model, property} from '@loopback/repository';
 import {db2config} from '../datasources/env';
 
-@model({settings: {idInjection: false, db2: {schema: db2config.schema, table: 'SINIESTROS'}}})
+@model({
+  settings: {
+    idInjection: false,
+    db2: {schema: db2config.schema, table: 'SINIESTROS'},
+  },
+})
 export class Siniestros extends Entity {
   @property({
     type: 'string',
@@ -10,7 +15,14 @@ export class Siniestros extends Entity {
     // precision: ,
     scale: 0,
     id: 1,
-    db2: {columnName: 'CODEMPLEADO', dataType: 'CHARACTER', dataLength: 15, dataPrecision: undefined, dataScale: 0, nullable: 'N'},
+    db2: {
+      columnName: 'CODEMPLEADO',
+      dataType: 'CHARACTER',
+      dataLength: 15,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'N',
+    },
   })
   codempleado: string;
 
@@ -19,7 +31,14 @@ export class Siniestros extends Entity {
     length: 5,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'CODIGO', dataType: 'CHARACTER', dataLength: 5, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'CODIGO',
+      dataType: 'CHARACTER',
+      dataLength: 5,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   codigo?: string;
 
@@ -28,7 +47,14 @@ export class Siniestros extends Entity {
     length: 25,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'COMISARIA', dataType: 'CHARACTER', dataLength: 25, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'COMISARIA',
+      dataType: 'CHARACTER',
+      dataLength: 25,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   comisaria?: string;
 
@@ -37,7 +63,14 @@ export class Siniestros extends Entity {
     length: 40,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'DESCRIPCION', dataType: 'CHARACTER', dataLength: 40, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'DESCRIPCION',
+      dataType: 'CHARACTER',
+      dataLength: 40,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   descripcion?: string;
 
@@ -46,7 +79,14 @@ export class Siniestros extends Entity {
     length: 25,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'ESTADO', dataType: 'CHARACTER', dataLength: 25, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'ESTADO',
+      dataType: 'CHARACTER',
+      dataLength: 25,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   estado?: string;
 
@@ -55,7 +95,14 @@ export class Siniestros extends Entity {
     length: 13,
     // precision: ,
     scale: 12,
-    db2: {columnName: 'FECMODIFICACION', dataType: 'TIMESTAMP', dataLength: 13, dataPrecision: undefined, dataScale: 12, nullable: 'Y'},
+    db2: {
+      columnName: 'FECMODIFICACION',
+      dataType: 'TIMESTAMP',
+      dataLength: 13,
+      dataPrecision: undefined,
+      dataScale: 12,
+      nullable: 'Y',
+    },
   })
   fecmodificacion?: string;
 
@@ -64,7 +111,14 @@ export class Siniestros extends Entity {
     length: 4,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'FECSINIESTRO', dataType: 'DATE', dataLength: 4, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'FECSINIESTRO',
+      dataType: 'DATE',
+      dataLength: 4,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   fecsiniestro?: string;
 
@@ -73,7 +127,14 @@ export class Siniestros extends Entity {
     length: 15,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'FRANQUICIA', dataType: 'CHARACTER', dataLength: 15, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'FRANQUICIA',
+      dataType: 'CHARACTER',
+      dataLength: 15,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   franquicia?: string;
 
@@ -82,7 +143,14 @@ export class Siniestros extends Entity {
     length: 8,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'IMPORTE', dataType: 'DOUBLE', dataLength: 8, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'IMPORTE',
+      dataType: 'DOUBLE',
+      dataLength: 8,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   importe?: number;
 
@@ -91,7 +159,14 @@ export class Siniestros extends Entity {
     length: 40,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'LUGAR', dataType: 'CHARACTER', dataLength: 40, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'LUGAR',
+      dataType: 'CHARACTER',
+      dataLength: 40,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   lugar?: string;
 
@@ -100,7 +175,14 @@ export class Siniestros extends Entity {
     length: 10,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'NUMCONFORMIDAD', dataType: 'CHARACTER', dataLength: 10, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'NUMCONFORMIDAD',
+      dataType: 'CHARACTER',
+      dataLength: 10,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   numconformidad?: string;
 
@@ -109,7 +191,14 @@ export class Siniestros extends Entity {
     length: 10,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'NUMDENUNCIA', dataType: 'CHARACTER', dataLength: 10, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'NUMDENUNCIA',
+      dataType: 'CHARACTER',
+      dataLength: 10,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   numdenuncia?: string;
 
@@ -120,7 +209,14 @@ export class Siniestros extends Entity {
     // precision: ,
     scale: 0,
     id: 3,
-    db2: {columnName: 'NUMERO', dataType: 'CHARACTER', dataLength: 10, dataPrecision: undefined, dataScale: 0, nullable: 'N'},
+    db2: {
+      columnName: 'NUMERO',
+      dataType: 'CHARACTER',
+      dataLength: 10,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'N',
+    },
   })
   numero: string;
 
@@ -131,7 +227,14 @@ export class Siniestros extends Entity {
     // precision: ,
     scale: 0,
     id: 2,
-    db2: {columnName: 'PLACA', dataType: 'CHARACTER', dataLength: 10, dataPrecision: undefined, dataScale: 0, nullable: 'N'},
+    db2: {
+      columnName: 'PLACA',
+      dataType: 'CHARACTER',
+      dataLength: 10,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'N',
+    },
   })
   placa: string;
 
@@ -141,7 +244,14 @@ export class Siniestros extends Entity {
     length: 3,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'TIPODOC', dataType: 'CHARACTER', dataLength: 3, dataPrecision: undefined, dataScale: 0, nullable: 'N'},
+    db2: {
+      columnName: 'TIPODOC',
+      dataType: 'CHARACTER',
+      dataLength: 3,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'N',
+    },
   })
   tipodoc: string;
 

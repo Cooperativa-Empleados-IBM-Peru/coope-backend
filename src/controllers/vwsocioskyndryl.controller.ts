@@ -4,12 +4,18 @@ import {
   Filter,
   FilterExcludingWhere,
   repository,
-  Where
+  Where,
 } from '@loopback/repository';
 import {
-  del, get,
-  getModelSchemaRef, param, patch, post, put, requestBody,
-  response
+  del,
+  get,
+  getModelSchemaRef,
+  param,
+  patch,
+  post,
+  put,
+  requestBody,
+  response,
 } from '@loopback/rest';
 import {Vwsocioskyndryl} from '../models';
 import {VwsocioskyndrylRepository} from '../repositories';
@@ -18,7 +24,7 @@ export class VwsocioskyndrylController {
   constructor(
     @repository(VwsocioskyndrylRepository)
     public vwsocioskyndrylRepository: VwsocioskyndrylRepository,
-  ) { }
+  ) {}
 
   @post('/vwsocioskyndryl')
   @response(200, {
@@ -100,7 +106,8 @@ export class VwsocioskyndrylController {
   })
   async findById(
     @param.path.string('id') id: string,
-    @param.filter(Vwsocioskyndryl, {exclude: 'where'}) filter?: FilterExcludingWhere<Vwsocioskyndryl>
+    @param.filter(Vwsocioskyndryl, {exclude: 'where'})
+    filter?: FilterExcludingWhere<Vwsocioskyndryl>,
   ): Promise<Vwsocioskyndryl> {
     return this.vwsocioskyndrylRepository.findById(id, filter);
   }

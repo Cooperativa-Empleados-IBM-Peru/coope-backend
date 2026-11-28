@@ -39,16 +39,26 @@ describe('CloudantController', () => {
 
   it('rejects databases that are not on the allow list', async () => {
     const {calls, controller} = givenClient();
-    await expect(controller.allDocs('_users', false)).to.be.rejectedWith(/Not found/);
-    await expect(controller.find('_replicator', {})).to.be.rejectedWith(/Not found/);
+    await expect(controller.allDocs('_users', false)).to.be.rejectedWith(
+      /Not found/,
+    );
+    await expect(controller.find('_replicator', {})).to.be.rejectedWith(
+      /Not found/,
+    );
     expect(calls).to.have.length(0);
   });
 
   it('rejects design/local ids and path traversal', async () => {
     const {calls, controller} = givenClient();
-    await expect(controller.findById('servicios', '_design/x')).to.be.rejected();
-    await expect(controller.findById('servicios', '../_users')).to.be.rejected();
-    await expect(controller.replace('servicios', '_local', {})).to.be.rejected();
+    await expect(
+      controller.findById('servicios', '_design/x'),
+    ).to.be.rejected();
+    await expect(
+      controller.findById('servicios', '../_users'),
+    ).to.be.rejected();
+    await expect(
+      controller.replace('servicios', '_local', {}),
+    ).to.be.rejected();
     expect(calls).to.have.length(0);
   });
 
@@ -62,8 +72,14 @@ describe('CloudantController', () => {
 
   it('requires a valid rev to delete', async () => {
     const {calls, controller} = givenClient();
-    await expect(controller.remove('servicios', 'doc1', 'x')).to.be.rejectedWith(/Invalid rev/);
-    await controller.remove('servicios', 'doc1', '3-0123456789abcdef0123456789abcdef');
+    await expect(
+      controller.remove('servicios', 'doc1', 'x'),
+    ).to.be.rejectedWith(/Invalid rev/);
+    await controller.remove(
+      'servicios',
+      'doc1',
+      '3-0123456789abcdef0123456789abcdef',
+    );
     expect(calls[0].init.method).to.equal('DELETE');
     expect(calls[0].url).to.equal(
       'https://cloudant.example.com/servicios/doc1?rev=3-0123456789abcdef0123456789abcdef',
@@ -72,11 +88,15 @@ describe('CloudantController', () => {
 
   it('maps upstream failures without leaking details', async () => {
     const {controller} = givenClient(500, {reason: 'secret db host'});
-    await expect(controller.allDocs('servicios', false)).to.be.rejectedWith(/Bad gateway/);
+    await expect(controller.allDocs('servicios', false)).to.be.rejectedWith(
+      /Bad gateway/,
+    );
   });
 
   it('is unavailable when not configured', async () => {
     const controller = new CloudantController(new CloudantClient({}));
-    await expect(controller.allDocs('servicios', false)).to.be.rejectedWith(/Service unavailable/);
+    await expect(controller.allDocs('servicios', false)).to.be.rejectedWith(
+      /Service unavailable/,
+    );
   });
 });

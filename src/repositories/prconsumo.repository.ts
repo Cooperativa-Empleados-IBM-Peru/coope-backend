@@ -7,10 +7,8 @@ export class PrconsumoRepository extends DefaultCrudRepository<
   Prconsumo,
   typeof Prconsumo.prototype.id,
   PrconsumoRelations
-  > {
-  constructor(
-    @inject('datasources.db2coope') dataSource: Db2CoopeDataSource,
-  ) {
+> {
+  constructor(@inject('datasources.db2coope') dataSource: Db2CoopeDataSource) {
     super(Prconsumo, dataSource);
   }
 }

@@ -7,10 +7,8 @@ export class PrsolafirmaRepository extends DefaultCrudRepository<
   Prsolafirma,
   typeof Prsolafirma.prototype.id,
   PrsolafirmaRelations
-  > {
-  constructor(
-    @inject('datasources.db2coope') dataSource: Db2CoopeDataSource,
-  ) {
+> {
+  constructor(@inject('datasources.db2coope') dataSource: Db2CoopeDataSource) {
     super(Prsolafirma, dataSource);
   }
 }

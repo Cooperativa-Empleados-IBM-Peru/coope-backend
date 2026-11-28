@@ -1,12 +1,5 @@
-import {
-  Filter,
-  FilterExcludingWhere,
-  repository
-} from '@loopback/repository';
-import {
-  get,
-  getModelSchemaRef, param
-} from '@loopback/rest';
+import {Filter, FilterExcludingWhere, repository} from '@loopback/repository';
+import {get, getModelSchemaRef, param} from '@loopback/rest';
 import {Movaportaciones} from '../models';
 import {MovaportacionesRepository} from '../repositories';
 
@@ -14,7 +7,7 @@ export class MovaportacionesController {
   constructor(
     @repository(MovaportacionesRepository)
     public movaportacionesRepository: MovaportacionesRepository,
-  ) { }
+  ) {}
   /*
     @get('/movaportaciones/count', {
       responses: {
@@ -38,7 +31,9 @@ export class MovaportacionesController {
           'application/json': {
             schema: {
               type: 'array',
-              items: getModelSchemaRef(Movaportaciones, {includeRelations: true}),
+              items: getModelSchemaRef(Movaportaciones, {
+                includeRelations: true,
+              }),
             },
           },
         },
@@ -57,7 +52,9 @@ export class MovaportacionesController {
         description: 'Movaportaciones model instance',
         content: {
           'application/json': {
-            schema: getModelSchemaRef(Movaportaciones, {includeRelations: true}),
+            schema: getModelSchemaRef(Movaportaciones, {
+              includeRelations: true,
+            }),
           },
         },
       },
@@ -65,9 +62,9 @@ export class MovaportacionesController {
   })
   async findById(
     @param.path.string('id') id: string,
-    @param.filter(Movaportaciones, {exclude: 'where'}) filter?: FilterExcludingWhere<Movaportaciones>
+    @param.filter(Movaportaciones, {exclude: 'where'})
+    filter?: FilterExcludingWhere<Movaportaciones>,
   ): Promise<Movaportaciones> {
     return this.movaportacionesRepository.findById(id, filter);
   }
-
 }

@@ -1,12 +1,5 @@
-import {
-  Filter,
-  FilterExcludingWhere,
-  repository
-} from '@loopback/repository';
-import {
-  get,
-  getModelSchemaRef, param
-} from '@loopback/rest';
+import {Filter, FilterExcludingWhere, repository} from '@loopback/repository';
+import {get, getModelSchemaRef, param} from '@loopback/rest';
 import {Planpagos} from '../models';
 import {PlanpagosRepository} from '../repositories';
 
@@ -14,7 +7,7 @@ export class PlanpagosController {
   constructor(
     @repository(PlanpagosRepository)
     public planpagosRepository: PlanpagosRepository,
-  ) { }
+  ) {}
 
   /*
     @get('/planpagos/count', {
@@ -52,7 +45,6 @@ export class PlanpagosController {
     return this.planpagosRepository.find(filter);
   }
 
-
   @get('/planpagos/{id}', {
     responses: {
       '200': {
@@ -67,9 +59,9 @@ export class PlanpagosController {
   })
   async findById(
     @param.path.number('id') id: number,
-    @param.filter(Planpagos, {exclude: 'where'}) filter?: FilterExcludingWhere<Planpagos>
+    @param.filter(Planpagos, {exclude: 'where'})
+    filter?: FilterExcludingWhere<Planpagos>,
   ): Promise<Planpagos> {
     return this.planpagosRepository.findById(id, filter);
   }
-
 }

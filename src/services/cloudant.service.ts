@@ -36,7 +36,9 @@ export class CloudantClient {
     }
 
     const target = new URL(
-      url.replace(/\/+$/, '') + '/' + req.segments.map(encodeURIComponent).join('/'),
+      url.replace(/\/+$/, '') +
+        '/' +
+        req.segments.map(encodeURIComponent).join('/'),
     );
     for (const [key, value] of Object.entries(req.query ?? {})) {
       target.searchParams.set(key, value);
@@ -51,7 +53,8 @@ export class CloudantClient {
           'Content-Type': 'application/json',
           Accept: 'application/json',
           Authorization:
-            'Basic ' + Buffer.from(`${username}:${password}`).toString('base64'),
+            'Basic ' +
+            Buffer.from(`${username}:${password}`).toString('base64'),
         },
         body: hasBody ? JSON.stringify(req.body ?? {}) : undefined,
         signal: AbortSignal.timeout(TIMEOUT_MS),

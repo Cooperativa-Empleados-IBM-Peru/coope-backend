@@ -31,8 +31,12 @@ function givenController(options: {
       if (options.failInsert) throw new Error('db down');
     },
   };
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const controller = new UsersController(sociosRepo as any, adminsRepo as any, dataSource as any);
+
+  const controller = new UsersController(
+    sociosRepo as unknown as ConstructorParameters<typeof UsersController>[0],
+    adminsRepo as unknown as ConstructorParameters<typeof UsersController>[1],
+    dataSource as unknown as ConstructorParameters<typeof UsersController>[2],
+  );
   return {controller, executed, filters};
 }
 
@@ -42,16 +46,25 @@ describe('UsersController', () => {
       socios: [{uuid: 'abc   '}],
       admins: [{codempleado: '1'}],
     });
-    expect(await controller.login({email: 'a@b.com'})).to.eql({uuid: 'abc', isAdmin: true});
+    expect(await controller.login({email: 'a@b.com'})).to.eql({
+      uuid: 'abc',
+      isAdmin: true,
+    });
   });
 
   it('returns isAdmin=false when the user is not in VWCOOPEADMINS', async () => {
     const {controller} = givenController({socios: [{uuid: 'abc'}], admins: []});
-    expect(await controller.login({email: 'a@b.com'})).to.eql({uuid: 'abc', isAdmin: false});
+    expect(await controller.login({email: 'a@b.com'})).to.eql({
+      uuid: 'abc',
+      isAdmin: false,
+    });
   });
 
   it('returns an empty uuid when the email matches 0 or several members', async () => {
-    expect((await givenController({socios: []}).controller.login({email: 'a@b.com'})).uuid).to.equal('');
+    expect(
+      (await givenController({socios: []}).controller.login({email: 'a@b.com'}))
+        .uuid,
+    ).to.equal('');
     const two = givenController({socios: [{uuid: '1'}, {uuid: '2'}]});
     expect((await two.controller.login({email: 'a@b.com'})).uuid).to.equal('');
   });
@@ -68,16 +81,29 @@ describe('UsersController', () => {
   });
 
   it('does not fail the login when the audit insert fails', async () => {
-    const {controller} = givenController({socios: [{uuid: 'abc'}], failInsert: true});
+    const {controller} = givenController({
+      socios: [{uuid: 'abc'}],
+      failInsert: true,
+    });
     expect((await controller.login({email: 'a@b.com'})).uuid).to.equal('abc');
   });
 
   it('is-admin answers from VWCOOPEADMINS only', async () => {
-    expect(await givenController({admins: [{}]}).controller.isAdmin({email: 'a@b.com'})).to.eql({isAdmin: true});
-    expect(await givenController({admins: []}).controller.isAdmin({email: 'a@b.com'})).to.eql({isAdmin: false});
+    expect(
+      await givenController({admins: [{}]}).controller.isAdmin({
+        email: 'a@b.com',
+      }),
+    ).to.eql({isAdmin: true});
+    expect(
+      await givenController({admins: []}).controller.isAdmin({
+        email: 'a@b.com',
+      }),
+    ).to.eql({isAdmin: false});
   });
 
   it('rejects an empty email', async () => {
-    await expect(givenController({}).controller.isAdmin({email: '  '})).to.be.rejectedWith(/email is required/);
+    await expect(
+      givenController({}).controller.isAdmin({email: '  '}),
+    ).to.be.rejectedWith(/email is required/);
   });
 });

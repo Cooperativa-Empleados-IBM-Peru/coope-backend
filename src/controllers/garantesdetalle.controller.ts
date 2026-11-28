@@ -1,12 +1,5 @@
-import {
-  Filter,
-  FilterExcludingWhere,
-  repository
-} from '@loopback/repository';
-import {
-  get,
-  getModelSchemaRef, param
-} from '@loopback/rest';
+import {Filter, FilterExcludingWhere, repository} from '@loopback/repository';
+import {get, getModelSchemaRef, param} from '@loopback/rest';
 import {Garantesdetalle} from '../models';
 import {GarantesdetalleRepository} from '../repositories';
 
@@ -14,7 +7,7 @@ export class GarantesdetalleController {
   constructor(
     @repository(GarantesdetalleRepository)
     public garantesdetalleRepository: GarantesdetalleRepository,
-  ) { }
+  ) {}
   /*
     @get('/garantesdetalle/count', {
       responses: {
@@ -38,7 +31,9 @@ export class GarantesdetalleController {
           'application/json': {
             schema: {
               type: 'array',
-              items: getModelSchemaRef(Garantesdetalle, {includeRelations: true}),
+              items: getModelSchemaRef(Garantesdetalle, {
+                includeRelations: true,
+              }),
             },
           },
         },
@@ -57,7 +52,9 @@ export class GarantesdetalleController {
         description: 'Garantesdetalle model instance',
         content: {
           'application/json': {
-            schema: getModelSchemaRef(Garantesdetalle, {includeRelations: true}),
+            schema: getModelSchemaRef(Garantesdetalle, {
+              includeRelations: true,
+            }),
           },
         },
       },
@@ -65,9 +62,9 @@ export class GarantesdetalleController {
   })
   async findById(
     @param.path.string('id') id: string,
-    @param.filter(Garantesdetalle, {exclude: 'where'}) filter?: FilterExcludingWhere<Garantesdetalle>
+    @param.filter(Garantesdetalle, {exclude: 'where'})
+    filter?: FilterExcludingWhere<Garantesdetalle>,
   ): Promise<Garantesdetalle> {
     return this.garantesdetalleRepository.findById(id, filter);
   }
-
 }

@@ -8,9 +8,7 @@ export class VwprestamossolesRepository extends DefaultCrudRepository<
   typeof Vwprestamossoles.prototype.id,
   VwprestamossolesRelations
 > {
-  constructor(
-    @inject('datasources.db2coope') dataSource: Db2CoopeDataSource,
-  ) {
+  constructor(@inject('datasources.db2coope') dataSource: Db2CoopeDataSource) {
     super(Vwprestamossoles, dataSource);
   }
 }

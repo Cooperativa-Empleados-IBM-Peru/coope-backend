@@ -1,12 +1,5 @@
-import {
-  Filter,
-  FilterExcludingWhere,
-  repository
-} from '@loopback/repository';
-import {
-  get,
-  getModelSchemaRef, param
-} from '@loopback/rest';
+import {Filter, FilterExcludingWhere, repository} from '@loopback/repository';
+import {get, getModelSchemaRef, param} from '@loopback/rest';
 import {Movbloqueos} from '../models';
 import {MovbloqueosRepository} from '../repositories';
 
@@ -14,7 +7,7 @@ export class MovbloqueosController {
   constructor(
     @repository(MovbloqueosRepository)
     public movbloqueosRepository: MovbloqueosRepository,
-  ) { }
+  ) {}
 
   /*
     @get('/movbloqueos/count', {
@@ -66,9 +59,9 @@ export class MovbloqueosController {
   })
   async findById(
     @param.path.string('id') id: string,
-    @param.filter(Movbloqueos, {exclude: 'where'}) filter?: FilterExcludingWhere<Movbloqueos>
+    @param.filter(Movbloqueos, {exclude: 'where'})
+    filter?: FilterExcludingWhere<Movbloqueos>,
   ): Promise<Movbloqueos> {
     return this.movbloqueosRepository.findById(id, filter);
   }
-
 }

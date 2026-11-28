@@ -2,7 +2,10 @@ import {Entity, model, property} from '@loopback/repository';
 import {db2config} from '../datasources/env';
 
 @model({
-  settings: {idInjection: false, db2: {schema: db2config.schema, table: 'CERTIFICADOS'}}
+  settings: {
+    idInjection: false,
+    db2: {schema: db2config.schema, table: 'CERTIFICADOS'},
+  },
 })
 export class Certificados extends Entity {
   @property({
@@ -12,7 +15,14 @@ export class Certificados extends Entity {
     //   precision: ,
     scale: 0,
     id: 2,
-    db2: {columnName: 'CODEMPLEADO', dataType: 'CHARACTER', dataLength: 15, dataPrecision: undefined, dataScale: 0, nullable: 'N'},
+    db2: {
+      columnName: 'CODEMPLEADO',
+      dataType: 'CHARACTER',
+      dataLength: 15,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'N',
+    },
   })
   codempleado: string;
 
@@ -23,7 +33,14 @@ export class Certificados extends Entity {
     //    precision: ,
     scale: 0,
     id: 3,
-    db2: {columnName: 'CTACLIENTE', dataType: 'CHARACTER', dataLength: 10, dataPrecision: undefined, dataScale: 0, nullable: 'N'},
+    db2: {
+      columnName: 'CTACLIENTE',
+      dataType: 'CHARACTER',
+      dataLength: 10,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'N',
+    },
   })
   ctacliente: string;
 
@@ -33,7 +50,14 @@ export class Certificados extends Entity {
     length: 5,
     //   precision: ,
     scale: 0,
-    db2: {columnName: 'DOCID', dataType: 'CHARACTER', dataLength: 5, dataPrecision: undefined, dataScale: 0, nullable: 'N'},
+    db2: {
+      columnName: 'DOCID',
+      dataType: 'CHARACTER',
+      dataLength: 5,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'N',
+    },
   })
   docid: string;
 
@@ -42,7 +66,14 @@ export class Certificados extends Entity {
     length: 4,
     //    precision: ,
     scale: 0,
-    db2: {columnName: 'FECEMISION', dataType: 'DATE', dataLength: 4, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'FECEMISION',
+      dataType: 'DATE',
+      dataLength: 4,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   fecemision?: string;
 
@@ -51,7 +82,14 @@ export class Certificados extends Entity {
     length: 13,
     //    precision: ,
     scale: 12,
-    db2: {columnName: 'FECMODIFICACION', dataType: 'TIMESTAMP', dataLength: 13, dataPrecision: undefined, dataScale: 12, nullable: 'Y'},
+    db2: {
+      columnName: 'FECMODIFICACION',
+      dataType: 'TIMESTAMP',
+      dataLength: 13,
+      dataPrecision: undefined,
+      dataScale: 12,
+      nullable: 'Y',
+    },
   })
   fecmodificacion?: string;
 
@@ -60,7 +98,14 @@ export class Certificados extends Entity {
     length: 4,
     //   precision: ,
     scale: 0,
-    db2: {columnName: 'FECVENCIMIENTO', dataType: 'DATE', dataLength: 4, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'FECVENCIMIENTO',
+      dataType: 'DATE',
+      dataLength: 4,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   fecvencimiento?: string;
 
@@ -69,7 +114,14 @@ export class Certificados extends Entity {
     length: 8,
     //    precision: ,
     scale: 0,
-    db2: {columnName: 'INTERES', dataType: 'DOUBLE', dataLength: 8, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'INTERES',
+      dataType: 'DOUBLE',
+      dataLength: 8,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   interes?: number;
 
@@ -78,7 +130,14 @@ export class Certificados extends Entity {
     length: 8,
     //   precision: ,
     scale: 0,
-    db2: {columnName: 'INTERESC', dataType: 'DOUBLE', dataLength: 8, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'INTERESC',
+      dataType: 'DOUBLE',
+      dataLength: 8,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   interesc?: number;
 
@@ -87,7 +146,14 @@ export class Certificados extends Entity {
     length: 8,
     //   precision: ,
     scale: 0,
-    db2: {columnName: 'INTERESP', dataType: 'DOUBLE', dataLength: 8, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'INTERESP',
+      dataType: 'DOUBLE',
+      dataLength: 8,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   interesp?: number;
 
@@ -96,7 +162,14 @@ export class Certificados extends Entity {
     length: 8,
     //   precision: ,
     scale: 0,
-    db2: {columnName: 'MONTO', dataType: 'DOUBLE', dataLength: 8, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'MONTO',
+      dataType: 'DOUBLE',
+      dataLength: 8,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   monto?: number;
 
@@ -107,7 +180,14 @@ export class Certificados extends Entity {
     //   precision: ,
     scale: 0,
     id: 4,
-    db2: {columnName: 'NUMDOC', dataType: 'CHARACTER', dataLength: 10, dataPrecision: undefined, dataScale: 0, nullable: 'N'},
+    db2: {
+      columnName: 'NUMDOC',
+      dataType: 'CHARACTER',
+      dataLength: 10,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'N',
+    },
   })
   numdoc: string;
 
@@ -117,7 +197,14 @@ export class Certificados extends Entity {
     length: 2,
     //   precision: ,
     scale: 0,
-    db2: {columnName: 'PLAZO', dataType: 'SMALLINT', dataLength: 2, dataPrecision: undefined, dataScale: 0, nullable: 'N'},
+    db2: {
+      columnName: 'PLAZO',
+      dataType: 'SMALLINT',
+      dataLength: 2,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'N',
+    },
   })
   plazo: number;
 
@@ -128,7 +215,14 @@ export class Certificados extends Entity {
     //   precision: ,
     scale: 0,
     id: 1,
-    db2: {columnName: 'TIPOCERT', dataType: 'CHARACTER', dataLength: 5, dataPrecision: undefined, dataScale: 0, nullable: 'N'},
+    db2: {
+      columnName: 'TIPOCERT',
+      dataType: 'CHARACTER',
+      dataLength: 5,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'N',
+    },
   })
   tipocert: string;
 
@@ -138,7 +232,14 @@ export class Certificados extends Entity {
     length: 5,
     //    precision: ,
     scale: 0,
-    db2: {columnName: 'TIPOID', dataType: 'CHARACTER', dataLength: 5, dataPrecision: undefined, dataScale: 0, nullable: 'N'},
+    db2: {
+      columnName: 'TIPOID',
+      dataType: 'CHARACTER',
+      dataLength: 5,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'N',
+    },
   })
   tipoid: string;
 
@@ -149,7 +250,14 @@ export class Certificados extends Entity {
     //   precision: ,
     scale: 0,
     id: 5,
-    db2: {columnName: 'TIPOPAGO', dataType: 'CHARACTER', dataLength: 5, dataPrecision: undefined, dataScale: 0, nullable: 'N'},
+    db2: {
+      columnName: 'TIPOPAGO',
+      dataType: 'CHARACTER',
+      dataLength: 5,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'N',
+    },
   })
   tipopago: string;
 
@@ -158,7 +266,14 @@ export class Certificados extends Entity {
     length: 5,
     //   precision: ,
     scale: 0,
-    db2: {columnName: 'VERS', dataType: 'CHARACTER', dataLength: 5, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'VERS',
+      dataType: 'CHARACTER',
+      dataLength: 5,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   vers?: string;
 

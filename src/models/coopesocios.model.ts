@@ -2,7 +2,10 @@ import {Entity, model, property} from '@loopback/repository';
 import {db2config} from '../datasources/env';
 
 @model({
-  settings: {idInjection: false, db2: {schema: db2config.schema, table: 'COOPESOCIOS'}}
+  settings: {
+    idInjection: false,
+    db2: {schema: db2config.schema, table: 'COOPESOCIOS'},
+  },
 })
 export class Coopesocios extends Entity {
   @property({
@@ -10,7 +13,14 @@ export class Coopesocios extends Entity {
     length: 1,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'ACTIVO', dataType: 'BOOLEAN', dataLength: 1, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'ACTIVO',
+      dataType: 'BOOLEAN',
+      dataLength: 1,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   activo?: boolean;
 
@@ -21,7 +31,14 @@ export class Coopesocios extends Entity {
     // precision: ,
     scale: 0,
     // id: 1,
-    db2: {columnName: 'CODEMPLEADO', dataType: 'CHARACTER', dataLength: 15, dataPrecision: undefined, dataScale: 0, nullable: 'N'},
+    db2: {
+      columnName: 'CODEMPLEADO',
+      dataType: 'CHARACTER',
+      dataLength: 15,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'N',
+    },
   })
   codempleado: string;
 
@@ -31,7 +48,14 @@ export class Coopesocios extends Entity {
     length: 5,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'CODPAIS', dataType: 'CHARACTER', dataLength: 5, dataPrecision: undefined, dataScale: 0, nullable: 'N'},
+    db2: {
+      columnName: 'CODPAIS',
+      dataType: 'CHARACTER',
+      dataLength: 5,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'N',
+    },
   })
   codpais: string;
 
@@ -40,7 +64,14 @@ export class Coopesocios extends Entity {
     length: 10,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'COMPANY', dataType: 'CHARACTER', dataLength: 10, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'COMPANY',
+      dataType: 'CHARACTER',
+      dataLength: 10,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   company?: string;
 
@@ -49,7 +80,14 @@ export class Coopesocios extends Entity {
     length: 70,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'EMAILEMPLEADO', dataType: 'CHARACTER', dataLength: 70, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'EMAILEMPLEADO',
+      dataType: 'CHARACTER',
+      dataLength: 70,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   emailempleado?: string;
 
@@ -58,7 +96,14 @@ export class Coopesocios extends Entity {
     length: 70,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'EMAILEMPLEADO2', dataType: 'CHARACTER', dataLength: 70, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'EMAILEMPLEADO2',
+      dataType: 'CHARACTER',
+      dataLength: 70,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   emailempleado2?: string;
 
@@ -67,7 +112,14 @@ export class Coopesocios extends Entity {
     length: 13,
     // precision: ,
     scale: 12,
-    db2: {columnName: 'FECMODIFICACION', dataType: 'TIMESTAMP', dataLength: 13, dataPrecision: undefined, dataScale: 12, nullable: 'Y'},
+    db2: {
+      columnName: 'FECMODIFICACION',
+      dataType: 'TIMESTAMP',
+      dataLength: 13,
+      dataPrecision: undefined,
+      dataScale: 12,
+      nullable: 'Y',
+    },
   })
   fecmodificacion?: string;
 
@@ -76,7 +128,14 @@ export class Coopesocios extends Entity {
     length: 1,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'INBLUEPAGES', dataType: 'BOOLEAN', dataLength: 1, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'INBLUEPAGES',
+      dataType: 'BOOLEAN',
+      dataLength: 1,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   inbluepages?: boolean;
 
@@ -85,7 +144,14 @@ export class Coopesocios extends Entity {
     length: 1,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'ISADMIN', dataType: 'BOOLEAN', dataLength: 1, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'ISADMIN',
+      dataType: 'BOOLEAN',
+      dataLength: 1,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   isadmin?: string;
 
@@ -95,7 +161,14 @@ export class Coopesocios extends Entity {
     length: 70,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'NOMBREEMPLEADO', dataType: 'CHARACTER', dataLength: 70, dataPrecision: undefined, dataScale: 0, nullable: 'N'},
+    db2: {
+      columnName: 'NOMBREEMPLEADO',
+      dataType: 'CHARACTER',
+      dataLength: 70,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'N',
+    },
   })
   nombreempleado: string;
 
@@ -105,7 +178,14 @@ export class Coopesocios extends Entity {
     length: 1,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'TIPDID', dataType: 'CHARACTER', dataLength: 1, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'TIPDID',
+      dataType: 'CHARACTER',
+      dataLength: 1,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   tipdid?: string;
 
@@ -114,7 +194,14 @@ export class Coopesocios extends Entity {
     length: 11,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'DOCIDE', dataType: 'VARCHAR', dataLength: 11, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'DOCIDE',
+      dataType: 'VARCHAR',
+      dataLength: 11,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   docide?: string;
 
@@ -123,7 +210,14 @@ export class Coopesocios extends Entity {
     length: 20,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'APEPAT', dataType: 'VARCHAR', dataLength: 20, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'APEPAT',
+      dataType: 'VARCHAR',
+      dataLength: 20,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   apepat?: string;
 
@@ -132,7 +226,14 @@ export class Coopesocios extends Entity {
     length: 20,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'APEMAT', dataType: 'VARCHAR', dataLength: 20, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'APEMAT',
+      dataType: 'VARCHAR',
+      dataLength: 20,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   apemat?: string;
 
@@ -141,7 +242,14 @@ export class Coopesocios extends Entity {
     length: 30,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'NOMBRE', dataType: 'VARCHAR', dataLength: 30, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'NOMBRE',
+      dataType: 'VARCHAR',
+      dataLength: 30,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   nombre?: string;
 
@@ -150,7 +258,14 @@ export class Coopesocios extends Entity {
     length: 80,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'DIRECC', dataType: 'VARCHAR', dataLength: 80, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'DIRECC',
+      dataType: 'VARCHAR',
+      dataLength: 80,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   direcc?: string;
 
@@ -159,7 +274,14 @@ export class Coopesocios extends Entity {
     length: 40,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'LOCALI', dataType: 'VARCHAR', dataLength: 40, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'LOCALI',
+      dataType: 'VARCHAR',
+      dataLength: 40,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   locali?: string;
 
@@ -168,7 +290,14 @@ export class Coopesocios extends Entity {
     length: 40,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'PROVIN', dataType: 'VARCHAR', dataLength: 40, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'PROVIN',
+      dataType: 'VARCHAR',
+      dataLength: 40,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   provin?: string;
 
@@ -177,7 +306,14 @@ export class Coopesocios extends Entity {
     length: 40,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'DEPART', dataType: 'VARCHAR', dataLength: 40, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'DEPART',
+      dataType: 'VARCHAR',
+      dataLength: 40,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   depart?: string;
 
@@ -186,7 +322,14 @@ export class Coopesocios extends Entity {
     length: 60,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'NCOMPL', dataType: 'VARCHAR', dataLength: 60, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'NCOMPL',
+      dataType: 'VARCHAR',
+      dataLength: 60,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   ncompl?: string;
 
@@ -195,7 +338,14 @@ export class Coopesocios extends Entity {
     length: 50,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'NOMBC2', dataType: 'VARCHAR', dataLength: 50, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'NOMBC2',
+      dataType: 'VARCHAR',
+      dataLength: 50,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   nombc2?: string;
 
@@ -204,7 +354,14 @@ export class Coopesocios extends Entity {
     length: 9,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'TELCEL', dataType: 'VARCHAR', dataLength: 9, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'TELCEL',
+      dataType: 'VARCHAR',
+      dataLength: 9,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   telcel?: string;
 
@@ -213,7 +370,14 @@ export class Coopesocios extends Entity {
     length: 1,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'NACION', dataType: 'CHARACTER', dataLength: 1, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'NACION',
+      dataType: 'CHARACTER',
+      dataLength: 1,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   nacion?: string;
 
@@ -222,7 +386,14 @@ export class Coopesocios extends Entity {
     length: 6,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'CCIUDA', dataType: 'VARCHAR', dataLength: 6, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'CCIUDA',
+      dataType: 'VARCHAR',
+      dataLength: 6,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   cciuda?: string;
 
@@ -231,7 +402,14 @@ export class Coopesocios extends Entity {
     length: 40,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'NOMCON', dataType: 'VARCHAR', dataLength: 40, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'NOMCON',
+      dataType: 'VARCHAR',
+      dataLength: 40,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   nomcon?: string;
 
@@ -240,7 +418,14 @@ export class Coopesocios extends Entity {
     length: 8,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'DNICY', dataType: 'VARCHAR', dataLength: 8, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'DNICY',
+      dataType: 'VARCHAR',
+      dataLength: 8,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   dnicy?: string;
 
@@ -249,7 +434,14 @@ export class Coopesocios extends Entity {
     length: 1,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'ESTCIV', dataType: 'CHARACTER', dataLength: 1, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'ESTCIV',
+      dataType: 'CHARACTER',
+      dataLength: 1,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   estciv?: string;
 
@@ -258,7 +450,14 @@ export class Coopesocios extends Entity {
     length: 2,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'CARGAM', dataType: 'VARCHAR', dataLength: 2, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'CARGAM',
+      dataType: 'VARCHAR',
+      dataLength: 2,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   cargam?: string;
 
@@ -267,7 +466,14 @@ export class Coopesocios extends Entity {
     length: 20,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'OFICIO', dataType: 'VARCHAR', dataLength: 20, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'OFICIO',
+      dataType: 'VARCHAR',
+      dataLength: 20,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   oficio?: string;
 
@@ -276,7 +482,14 @@ export class Coopesocios extends Entity {
     length: 2,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'SECTO1', dataType: 'VARCHAR', dataLength: 2, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'SECTO1',
+      dataType: 'VARCHAR',
+      dataLength: 2,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   secto1?: string;
 
@@ -288,7 +501,14 @@ export class Coopesocios extends Entity {
     // precision: ,
     scale: 0,
     id: 1,
-    db2: {columnName: 'UUID', dataType: 'CHARACTER', dataLength: 40, dataPrecision: undefined, dataScale: 0, nullable: 'N'},
+    db2: {
+      columnName: 'UUID',
+      dataType: 'CHARACTER',
+      dataLength: 40,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'N',
+    },
   })
   uuid: string;
 

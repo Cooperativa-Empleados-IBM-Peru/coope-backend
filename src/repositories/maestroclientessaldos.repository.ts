@@ -8,9 +8,7 @@ export class MaestroclientessaldosRepository extends DefaultCrudRepository<
   typeof Maestroclientessaldos.prototype.ctacliente,
   MaestroclientessaldosRelations
 > {
-  constructor(
-    @inject('datasources.db2coope') dataSource: Db2CoopeDataSource,
-  ) {
+  constructor(@inject('datasources.db2coope') dataSource: Db2CoopeDataSource) {
     super(Maestroclientessaldos, dataSource);
   }
 }

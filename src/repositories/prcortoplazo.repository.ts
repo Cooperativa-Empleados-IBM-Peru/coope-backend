@@ -7,10 +7,8 @@ export class PrcortoplazoRepository extends DefaultCrudRepository<
   Prcortoplazo,
   typeof Prcortoplazo.prototype.id,
   PrcortoplazoRelations
-  > {
-  constructor(
-    @inject('datasources.db2coope') dataSource: Db2CoopeDataSource,
-  ) {
+> {
+  constructor(@inject('datasources.db2coope') dataSource: Db2CoopeDataSource) {
     super(Prcortoplazo, dataSource);
   }
 }

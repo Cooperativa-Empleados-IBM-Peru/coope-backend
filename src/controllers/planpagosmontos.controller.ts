@@ -1,12 +1,5 @@
-import {
-  Filter,
-  FilterExcludingWhere,
-  repository
-} from '@loopback/repository';
-import {
-  get,
-  getModelSchemaRef, param
-} from '@loopback/rest';
+import {Filter, FilterExcludingWhere, repository} from '@loopback/repository';
+import {get, getModelSchemaRef, param} from '@loopback/rest';
 import {Planpagosmontos} from '../models';
 import {PlanpagosmontosRepository} from '../repositories';
 
@@ -14,7 +7,7 @@ export class PlanpagosmontosController {
   constructor(
     @repository(PlanpagosmontosRepository)
     public planpagosmontosRepository: PlanpagosmontosRepository,
-  ) { }
+  ) {}
 
   /*
     @get('/planpagosmontos/count', {
@@ -39,7 +32,9 @@ export class PlanpagosmontosController {
           'application/json': {
             schema: {
               type: 'array',
-              items: getModelSchemaRef(Planpagosmontos, {includeRelations: true}),
+              items: getModelSchemaRef(Planpagosmontos, {
+                includeRelations: true,
+              }),
             },
           },
         },
@@ -58,7 +53,9 @@ export class PlanpagosmontosController {
         description: 'Planpagosmontos model instance',
         content: {
           'application/json': {
-            schema: getModelSchemaRef(Planpagosmontos, {includeRelations: true}),
+            schema: getModelSchemaRef(Planpagosmontos, {
+              includeRelations: true,
+            }),
           },
         },
       },
@@ -66,9 +63,9 @@ export class PlanpagosmontosController {
   })
   async findById(
     @param.path.number('id') id: number,
-    @param.filter(Planpagosmontos, {exclude: 'where'}) filter?: FilterExcludingWhere<Planpagosmontos>
+    @param.filter(Planpagosmontos, {exclude: 'where'})
+    filter?: FilterExcludingWhere<Planpagosmontos>,
   ): Promise<Planpagosmontos> {
     return this.planpagosmontosRepository.findById(id, filter);
   }
-
 }

@@ -1,7 +1,12 @@
 import {Entity, model, property} from '@loopback/repository';
 import {db2config} from '../datasources/env';
 
-@model({settings: {idInjection: false, db2: {schema: db2config.schema, table: 'MOVAHORROS'}}})
+@model({
+  settings: {
+    idInjection: false,
+    db2: {schema: db2config.schema, table: 'MOVAHORROS'},
+  },
+})
 export class Movahorros extends Entity {
   @property({
     type: 'string',
@@ -9,7 +14,14 @@ export class Movahorros extends Entity {
     length: 5,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'CODEMPRESA', dataType: 'CHARACTER', dataLength: 5, dataPrecision: undefined, dataScale: 0, nullable: 'N'},
+    db2: {
+      columnName: 'CODEMPRESA',
+      dataType: 'CHARACTER',
+      dataLength: 5,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'N',
+    },
   })
   codempresa: string;
 
@@ -21,7 +33,14 @@ export class Movahorros extends Entity {
     hidden: true,
     id: 1,
     scale: 0,
-    db2: {columnName: 'CTACLIENTE', dataType: 'CHARACTER', dataLength: 10, dataPrecision: undefined, dataScale: 0, nullable: 'N'},
+    db2: {
+      columnName: 'CTACLIENTE',
+      dataType: 'CHARACTER',
+      dataLength: 10,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'N',
+    },
   })
   ctacliente: string;
 
@@ -31,7 +50,14 @@ export class Movahorros extends Entity {
     length: 13,
     // precision: ,
     scale: 12,
-    db2: {columnName: 'FECEMISION', dataType: 'TIMESTAMP', dataLength: 13, dataPrecision: undefined, dataScale: 12, nullable: 'N'},
+    db2: {
+      columnName: 'FECEMISION',
+      dataType: 'TIMESTAMP',
+      dataLength: 13,
+      dataPrecision: undefined,
+      dataScale: 12,
+      nullable: 'N',
+    },
   })
   fecemision: string;
 
@@ -40,7 +66,14 @@ export class Movahorros extends Entity {
     length: 13,
     // precision: ,
     scale: 12,
-    db2: {columnName: 'FECMODIFICACION', dataType: 'TIMESTAMP', dataLength: 13, dataPrecision: undefined, dataScale: 12, nullable: 'Y'},
+    db2: {
+      columnName: 'FECMODIFICACION',
+      dataType: 'TIMESTAMP',
+      dataLength: 13,
+      dataPrecision: undefined,
+      dataScale: 12,
+      nullable: 'Y',
+    },
   })
   fecmodificacion?: string;
 
@@ -49,7 +82,14 @@ export class Movahorros extends Entity {
     length: 4,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'FECVENCIMIENTO', dataType: 'DATE', dataLength: 4, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'FECVENCIMIENTO',
+      dataType: 'DATE',
+      dataLength: 4,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   fecvencimiento?: string;
 
@@ -59,7 +99,14 @@ export class Movahorros extends Entity {
     length: 3,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'IDMOV', dataType: 'CHARACTER', dataLength: 3, dataPrecision: undefined, dataScale: 0, nullable: 'N'},
+    db2: {
+      columnName: 'IDMOV',
+      dataType: 'CHARACTER',
+      dataLength: 3,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'N',
+    },
   })
   idmov: string;
 
@@ -68,7 +115,14 @@ export class Movahorros extends Entity {
     length: 8,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'IMPORTE', dataType: 'DOUBLE', dataLength: 8, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'IMPORTE',
+      dataType: 'DOUBLE',
+      dataLength: 8,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   importe?: number;
 
@@ -78,7 +132,14 @@ export class Movahorros extends Entity {
     length: 15,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'NUMDEPO', dataType: 'CHARACTER', dataLength: 15, dataPrecision: undefined, dataScale: 0, nullable: 'N'},
+    db2: {
+      columnName: 'NUMDEPO',
+      dataType: 'CHARACTER',
+      dataLength: 15,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'N',
+    },
   })
   numdepo: string;
 
@@ -88,7 +149,14 @@ export class Movahorros extends Entity {
     length: 10,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'REFALFA', dataType: 'CHARACTER', dataLength: 10, dataPrecision: undefined, dataScale: 0, nullable: 'N'},
+    db2: {
+      columnName: 'REFALFA',
+      dataType: 'CHARACTER',
+      dataLength: 10,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'N',
+    },
   })
   refalfa: string;
 
@@ -98,7 +166,14 @@ export class Movahorros extends Entity {
     length: 15,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'REFERENCIA', dataType: 'CHARACTER', dataLength: 15, dataPrecision: undefined, dataScale: 0, nullable: 'N'},
+    db2: {
+      columnName: 'REFERENCIA',
+      dataType: 'CHARACTER',
+      dataLength: 15,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'N',
+    },
   })
   referencia: string;
 
@@ -108,7 +183,14 @@ export class Movahorros extends Entity {
     length: 40,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'TEXTO', dataType: 'CHARACTER', dataLength: 40, dataPrecision: undefined, dataScale: 0, nullable: 'N'},
+    db2: {
+      columnName: 'TEXTO',
+      dataType: 'CHARACTER',
+      dataLength: 40,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'N',
+    },
   })
   texto: string;
 
@@ -119,7 +201,14 @@ export class Movahorros extends Entity {
     hidden: true,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'TIPOMOV', dataType: 'CHARACTER', dataLength: 5, dataPrecision: undefined, dataScale: 0, nullable: 'N'},
+    db2: {
+      columnName: 'TIPOMOV',
+      dataType: 'CHARACTER',
+      dataLength: 5,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'N',
+    },
   })
   tipomov: string;
 
@@ -129,7 +218,14 @@ export class Movahorros extends Entity {
     length: 5,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'TIPOPAGO', dataType: 'CHARACTER', dataLength: 5, dataPrecision: undefined, dataScale: 0, nullable: 'N'},
+    db2: {
+      columnName: 'TIPOPAGO',
+      dataType: 'CHARACTER',
+      dataLength: 5,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'N',
+    },
   })
   tipopago: string;
 
@@ -139,7 +235,14 @@ export class Movahorros extends Entity {
     length: 5,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'TRANSACCION', dataType: 'CHARACTER', dataLength: 5, dataPrecision: undefined, dataScale: 0, nullable: 'N'},
+    db2: {
+      columnName: 'TRANSACCION',
+      dataType: 'CHARACTER',
+      dataLength: 5,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'N',
+    },
   })
   transaccion: string;
 

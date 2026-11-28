@@ -1,12 +1,5 @@
-import {
-  Filter,
-  FilterExcludingWhere,
-  repository
-} from '@loopback/repository';
-import {
-  get,
-  getModelSchemaRef, param
-} from '@loopback/rest';
+import {Filter, FilterExcludingWhere, repository} from '@loopback/repository';
+import {get, getModelSchemaRef, param} from '@loopback/rest';
 import {Videos} from '../models';
 import {VideosRepository} from '../repositories';
 
@@ -14,7 +7,7 @@ export class VideosController {
   constructor(
     @repository(VideosRepository)
     public videosRepository: VideosRepository,
-  ) { }
+  ) {}
 
   /*
     @get('/videos/count', {
@@ -46,9 +39,7 @@ export class VideosController {
       },
     },
   })
-  async find(
-    @param.filter(Videos) filter?: Filter<Videos>,
-  ): Promise<Videos[]> {
+  async find(@param.filter(Videos) filter?: Filter<Videos>): Promise<Videos[]> {
     return this.videosRepository.find(filter);
   }
 
@@ -66,9 +57,9 @@ export class VideosController {
   })
   async findById(
     @param.path.string('id') id: string,
-    @param.filter(Videos, {exclude: 'where'}) filter?: FilterExcludingWhere<Videos>
+    @param.filter(Videos, {exclude: 'where'})
+    filter?: FilterExcludingWhere<Videos>,
   ): Promise<Videos> {
     return this.videosRepository.findById(id, filter);
   }
-
 }
