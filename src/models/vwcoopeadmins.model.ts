@@ -57,6 +57,15 @@ export class Vwcoopeadmins extends Entity {
   emailempleado?: string;
 
   @property({
+    type: 'string',
+    length: 50,
+    // precision: ,
+    scale: 0,
+    db2: {columnName: 'EMAILEMPLEADO2', dataType: 'CHARACTER', dataLength: 50, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+  })
+  emailempleado2?: string;
+
+  @property({
     type: 'date',
     hidden: true,
     length: 13,
