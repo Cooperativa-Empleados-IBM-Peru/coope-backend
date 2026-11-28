@@ -8,9 +8,7 @@ export class VwprestamosusdRepository extends DefaultCrudRepository<
   typeof Vwprestamosusd.prototype.id,
   VwprestamosusdRelations
 > {
-  constructor(
-    @inject('datasources.db2coope') dataSource: Db2CoopeDataSource,
-  ) {
+  constructor(@inject('datasources.db2coope') dataSource: Db2CoopeDataSource) {
     super(Vwprestamosusd, dataSource);
   }
 }

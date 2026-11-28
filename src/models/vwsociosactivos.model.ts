@@ -2,17 +2,26 @@ import {Entity, model, property} from '@loopback/repository';
 import {db2config} from '../datasources/env';
 
 @model({
-  settings: {idInjection: false, db2: {schema: db2config.schema, table: 'VWSOCIOSACTIVOS'}}
+  settings: {
+    idInjection: false,
+    db2: {schema: db2config.schema, table: 'VWSOCIOSACTIVOS'},
+  },
 })
 export class Vwsociosactivos extends Entity {
-
   @property({
     type: 'string',
     required: true,
     length: 15,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'CODEMPLEADO', dataType: 'CHARACTER', dataLength: 15, dataPrecision: undefined, dataScale: 0, nullable: 'N'},
+    db2: {
+      columnName: 'CODEMPLEADO',
+      dataType: 'CHARACTER',
+      dataLength: 15,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'N',
+    },
   })
   codempleado: string;
 
@@ -24,7 +33,14 @@ export class Vwsociosactivos extends Entity {
     // precision: ,
     scale: 0,
     id: 1,
-    db2: {columnName: 'UUID', dataType: 'CHARACTER', dataLength: 40, dataPrecision: undefined, dataScale: 0, nullable: 'N'},
+    db2: {
+      columnName: 'UUID',
+      dataType: 'CHARACTER',
+      dataLength: 40,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'N',
+    },
   })
   uuid: string;
 
@@ -33,7 +49,14 @@ export class Vwsociosactivos extends Entity {
     length: 50,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'EMAILEMPLEADO', dataType: 'CHARACTER', dataLength: 50, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'EMAILEMPLEADO',
+      dataType: 'CHARACTER',
+      dataLength: 50,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   emailempleado?: string;
 
@@ -42,7 +65,14 @@ export class Vwsociosactivos extends Entity {
     length: 50,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'EMAILEMPLEADO2', dataType: 'CHARACTER', dataLength: 50, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'EMAILEMPLEADO2',
+      dataType: 'CHARACTER',
+      dataLength: 50,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   emailempleado2?: string;
 
@@ -52,7 +82,14 @@ export class Vwsociosactivos extends Entity {
     length: 50,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'NOMBREEMPLEADO', dataType: 'CHARACTER', dataLength: 50, dataPrecision: undefined, dataScale: 0, nullable: 'N'},
+    db2: {
+      columnName: 'NOMBREEMPLEADO',
+      dataType: 'CHARACTER',
+      dataLength: 50,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'N',
+    },
   })
   nombreempleado: string;
 
@@ -71,4 +108,5 @@ export interface VwsociosactivosRelations {
   // describe navigational properties here
 }
 
-export type VwsociosactivosWithRelations = Vwsociosactivos & VwsociosactivosRelations;
+export type VwsociosactivosWithRelations = Vwsociosactivos &
+  VwsociosactivosRelations;

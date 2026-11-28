@@ -4,8 +4,8 @@ import {db2config} from '../datasources/env';
 @model({
   settings: {
     idInjection: false,
-    db2: {schema: db2config.schema, table: 'PLANPAGOSTOTALCANCELADOS'}
-  }
+    db2: {schema: db2config.schema, table: 'PLANPAGOSTOTALCANCELADOS'},
+  },
 })
 export class Planpagostotalcancelados extends Entity {
   @property({
@@ -14,7 +14,14 @@ export class Planpagostotalcancelados extends Entity {
     length: 5,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'IDMOVIMIENTO', dataType: 'CHARACTER', dataLength: 5, dataPrecision: undefined, dataScale: 0, nullable: 'N'},
+    db2: {
+      columnName: 'IDMOVIMIENTO',
+      dataType: 'CHARACTER',
+      dataLength: 5,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'N',
+    },
   })
   idmovimiento: string;
 
@@ -25,7 +32,14 @@ export class Planpagostotalcancelados extends Entity {
     id: 1,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'NUMOPERACION', dataType: 'CHARACTER', dataLength: 15, dataPrecision: undefined, dataScale: 0, nullable: 'N'},
+    db2: {
+      columnName: 'NUMOPERACION',
+      dataType: 'CHARACTER',
+      dataLength: 15,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'N',
+    },
   })
   numoperacion: string;
 
@@ -34,7 +48,14 @@ export class Planpagostotalcancelados extends Entity {
     length: 8,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'TOTALCUOTAS', dataType: 'DOUBLE', dataLength: 8, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'TOTALCUOTAS',
+      dataType: 'DOUBLE',
+      dataLength: 8,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   totalcuotas?: number;
 
@@ -43,7 +64,14 @@ export class Planpagostotalcancelados extends Entity {
     length: 8,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'TOTALINTERES', dataType: 'DOUBLE', dataLength: 8, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'TOTALINTERES',
+      dataType: 'DOUBLE',
+      dataLength: 8,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   totalinteres?: number;
 
@@ -52,7 +80,14 @@ export class Planpagostotalcancelados extends Entity {
     length: 8,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'TOTALINTERESMORATORIO', dataType: 'DOUBLE', dataLength: 8, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'TOTALINTERESMORATORIO',
+      dataType: 'DOUBLE',
+      dataLength: 8,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   totalinteresmoratorio?: number;
 
@@ -61,7 +96,14 @@ export class Planpagostotalcancelados extends Entity {
     length: 8,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'TOTALMONTOS', dataType: 'DOUBLE', dataLength: 8, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'TOTALMONTOS',
+      dataType: 'DOUBLE',
+      dataLength: 8,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   totalmontos?: number;
 
@@ -80,4 +122,5 @@ export interface PlanpagostotalcanceladosRelations {
   // describe navigational properties here
 }
 
-export type PlanpagostotalcanceladosWithRelations = Planpagostotalcancelados & PlanpagostotalcanceladosRelations;
+export type PlanpagostotalcanceladosWithRelations = Planpagostotalcancelados &
+  PlanpagostotalcanceladosRelations;

@@ -8,9 +8,7 @@ export class FraRepository extends DefaultCrudRepository<
   typeof Fra.prototype.codempleado,
   FraRelations
 > {
-  constructor(
-    @inject('datasources.db2coope') dataSource: Db2CoopeDataSource,
-  ) {
+  constructor(@inject('datasources.db2coope') dataSource: Db2CoopeDataSource) {
     super(Fra, dataSource);
   }
 }

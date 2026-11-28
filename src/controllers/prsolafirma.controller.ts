@@ -1,12 +1,5 @@
-import {
-  Filter,
-  FilterExcludingWhere,
-  repository
-} from '@loopback/repository';
-import {
-  get,
-  getModelSchemaRef, param
-} from '@loopback/rest';
+import {Filter, FilterExcludingWhere, repository} from '@loopback/repository';
+import {get, getModelSchemaRef, param} from '@loopback/rest';
 import {Prsolafirma} from '../models';
 import {PrsolafirmaRepository} from '../repositories';
 
@@ -14,7 +7,7 @@ export class PrsolafirmaController {
   constructor(
     @repository(PrsolafirmaRepository)
     public prsolafirmaRepository: PrsolafirmaRepository,
-  ) { }
+  ) {}
   /*
     @get('/prsolafirma/count', {
       responses: {
@@ -51,7 +44,6 @@ export class PrsolafirmaController {
     return this.prsolafirmaRepository.find(filter);
   }
 
-
   @get('/prsolafirma/{id}', {
     responses: {
       '200': {
@@ -66,9 +58,9 @@ export class PrsolafirmaController {
   })
   async findById(
     @param.path.string('id') id: string,
-    @param.filter(Prsolafirma, {exclude: 'where'}) filter?: FilterExcludingWhere<Prsolafirma>
+    @param.filter(Prsolafirma, {exclude: 'where'})
+    filter?: FilterExcludingWhere<Prsolafirma>,
   ): Promise<Prsolafirma> {
     return this.prsolafirmaRepository.findById(id, filter);
   }
-
 }

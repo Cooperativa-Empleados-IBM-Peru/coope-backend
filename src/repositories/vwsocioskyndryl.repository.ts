@@ -8,9 +8,7 @@ export class VwsocioskyndrylRepository extends DefaultCrudRepository<
   typeof Vwsocioskyndryl.prototype.uuid,
   VwsocioskyndrylRelations
 > {
-  constructor(
-    @inject('datasources.db2coope') dataSource: Db2CoopeDataSource,
-  ) {
+  constructor(@inject('datasources.db2coope') dataSource: Db2CoopeDataSource) {
     super(Vwsocioskyndryl, dataSource);
   }
 }

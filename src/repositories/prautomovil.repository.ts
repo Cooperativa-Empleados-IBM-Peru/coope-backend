@@ -7,10 +7,8 @@ export class PrautomovilRepository extends DefaultCrudRepository<
   Prautomovil,
   typeof Prautomovil.prototype.id,
   PrautomovilRelations
-  > {
-  constructor(
-    @inject('datasources.db2coope') dataSource: Db2CoopeDataSource,
-  ) {
+> {
+  constructor(@inject('datasources.db2coope') dataSource: Db2CoopeDataSource) {
     super(Prautomovil, dataSource);
   }
 }

@@ -7,10 +7,8 @@ export class PracademicoRepository extends DefaultCrudRepository<
   Pracademico,
   typeof Pracademico.prototype.id,
   PracademicoRelations
-  > {
-  constructor(
-    @inject('datasources.db2coope') dataSource: Db2CoopeDataSource,
-  ) {
+> {
+  constructor(@inject('datasources.db2coope') dataSource: Db2CoopeDataSource) {
     super(Pracademico, dataSource);
   }
 }

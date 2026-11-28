@@ -1,12 +1,5 @@
-import {
-  Filter,
-  FilterExcludingWhere,
-  repository
-} from '@loopback/repository';
-import {
-  get,
-  getModelSchemaRef, param
-} from '@loopback/rest';
+import {Filter, FilterExcludingWhere, repository} from '@loopback/repository';
+import {get, getModelSchemaRef, param} from '@loopback/rest';
 import {Maestroclientessaldos} from '../models';
 import {MaestroclientessaldosRepository} from '../repositories';
 
@@ -14,7 +7,7 @@ export class MaestroclientessaldosController {
   constructor(
     @repository(MaestroclientessaldosRepository)
     public maestroclientessaldosRepository: MaestroclientessaldosRepository,
-  ) { }
+  ) {}
 
   /*
     @get('/maestroclientessaldos/count', {
@@ -39,7 +32,9 @@ export class MaestroclientessaldosController {
           'application/json': {
             schema: {
               type: 'array',
-              items: getModelSchemaRef(Maestroclientessaldos, {includeRelations: true}),
+              items: getModelSchemaRef(Maestroclientessaldos, {
+                includeRelations: true,
+              }),
             },
           },
         },
@@ -52,14 +47,15 @@ export class MaestroclientessaldosController {
     return this.maestroclientessaldosRepository.find(filter);
   }
 
-
   @get('/maestroclientessaldos/{id}', {
     responses: {
       '200': {
         description: 'Maestroclientessaldos model instance',
         content: {
           'application/json': {
-            schema: getModelSchemaRef(Maestroclientessaldos, {includeRelations: true}),
+            schema: getModelSchemaRef(Maestroclientessaldos, {
+              includeRelations: true,
+            }),
           },
         },
       },
@@ -67,10 +63,9 @@ export class MaestroclientessaldosController {
   })
   async findById(
     @param.path.string('id') id: string,
-    @param.filter(Maestroclientessaldos, {exclude: 'where'}) filter?: FilterExcludingWhere<Maestroclientessaldos>
+    @param.filter(Maestroclientessaldos, {exclude: 'where'})
+    filter?: FilterExcludingWhere<Maestroclientessaldos>,
   ): Promise<Maestroclientessaldos> {
     return this.maestroclientessaldosRepository.findById(id, filter);
   }
-
-
 }

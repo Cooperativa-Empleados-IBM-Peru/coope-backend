@@ -8,9 +8,7 @@ export class VwcoopeadminsRepository extends DefaultCrudRepository<
   typeof Vwcoopeadmins.prototype.codempleado,
   VwcoopeadminsRelations
 > {
-  constructor(
-    @inject('datasources.db2coope') dataSource: Db2CoopeDataSource,
-  ) {
+  constructor(@inject('datasources.db2coope') dataSource: Db2CoopeDataSource) {
     super(Vwcoopeadmins, dataSource);
   }
 }

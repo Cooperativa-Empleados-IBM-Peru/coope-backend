@@ -23,13 +23,15 @@ import {VwsociosexempleadosRepository} from '../repositories';
 export class VwsociosexempleadosController {
   constructor(
     @repository(VwsociosexempleadosRepository)
-    public vwsociosexempleadosRepository : VwsociosexempleadosRepository,
+    public vwsociosexempleadosRepository: VwsociosexempleadosRepository,
   ) {}
 
   @post('/vwsociosexempleados')
   @response(200, {
     description: 'Vwsociosexempleados model instance',
-    content: {'application/json': {schema: getModelSchemaRef(Vwsociosexempleados)}},
+    content: {
+      'application/json': {schema: getModelSchemaRef(Vwsociosexempleados)},
+    },
   })
   async create(
     @requestBody({
@@ -65,7 +67,9 @@ export class VwsociosexempleadosController {
       'application/json': {
         schema: {
           type: 'array',
-          items: getModelSchemaRef(Vwsociosexempleados, {includeRelations: true}),
+          items: getModelSchemaRef(Vwsociosexempleados, {
+            includeRelations: true,
+          }),
         },
       },
     },
@@ -92,7 +96,10 @@ export class VwsociosexempleadosController {
     vwsociosexempleados: Vwsociosexempleados,
     @param.where(Vwsociosexempleados) where?: Where<Vwsociosexempleados>,
   ): Promise<Count> {
-    return this.vwsociosexempleadosRepository.updateAll(vwsociosexempleados, where);
+    return this.vwsociosexempleadosRepository.updateAll(
+      vwsociosexempleados,
+      where,
+    );
   }
 
   @get('/vwsociosexempleados/{id}')
@@ -100,13 +107,16 @@ export class VwsociosexempleadosController {
     description: 'Vwsociosexempleados model instance',
     content: {
       'application/json': {
-        schema: getModelSchemaRef(Vwsociosexempleados, {includeRelations: true}),
+        schema: getModelSchemaRef(Vwsociosexempleados, {
+          includeRelations: true,
+        }),
       },
     },
   })
   async findById(
     @param.path.string('id') id: string,
-    @param.filter(Vwsociosexempleados, {exclude: 'where'}) filter?: FilterExcludingWhere<Vwsociosexempleados>
+    @param.filter(Vwsociosexempleados, {exclude: 'where'})
+    filter?: FilterExcludingWhere<Vwsociosexempleados>,
   ): Promise<Vwsociosexempleados> {
     return this.vwsociosexempleadosRepository.findById(id, filter);
   }
@@ -126,7 +136,10 @@ export class VwsociosexempleadosController {
     })
     vwsociosexempleados: Vwsociosexempleados,
   ): Promise<void> {
-    await this.vwsociosexempleadosRepository.updateById(id, vwsociosexempleados);
+    await this.vwsociosexempleadosRepository.updateById(
+      id,
+      vwsociosexempleados,
+    );
   }
 
   @put('/vwsociosexempleados/{id}')
@@ -137,7 +150,10 @@ export class VwsociosexempleadosController {
     @param.path.string('id') id: string,
     @requestBody() vwsociosexempleados: Vwsociosexempleados,
   ): Promise<void> {
-    await this.vwsociosexempleadosRepository.replaceById(id, vwsociosexempleados);
+    await this.vwsociosexempleadosRepository.replaceById(
+      id,
+      vwsociosexempleados,
+    );
   }
 
   @del('/vwsociosexempleados/{id}')

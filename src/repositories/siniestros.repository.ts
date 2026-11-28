@@ -8,9 +8,7 @@ export class SiniestrosRepository extends DefaultCrudRepository<
   typeof Siniestros.prototype.codempleado,
   SiniestrosRelations
 > {
-  constructor(
-    @inject('datasources.db2coope') dataSource: Db2CoopeDataSource,
-  ) {
+  constructor(@inject('datasources.db2coope') dataSource: Db2CoopeDataSource) {
     super(Siniestros, dataSource);
   }
 }

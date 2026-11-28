@@ -2,7 +2,10 @@ import {Entity, model, property} from '@loopback/repository';
 import {db2config} from '../datasources/env';
 
 @model({
-  settings: {idInjection: false, db2: {schema: db2config.schema, table: 'VWMASTERPLANPAGOS'}}
+  settings: {
+    idInjection: false,
+    db2: {schema: db2config.schema, table: 'VWMASTERPLANPAGOS'},
+  },
 })
 export class Vwmasterplanpagos extends Entity {
   @property({
@@ -10,7 +13,14 @@ export class Vwmasterplanpagos extends Entity {
     length: 8,
     //    precision: ,
     scale: 0,
-    db2: {columnName: 'CANTOTALMONTOS', dataType: 'DOUBLE', dataLength: 8, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'CANTOTALMONTOS',
+      dataType: 'DOUBLE',
+      dataLength: 8,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   cantotalmontos?: number;
 
@@ -19,7 +29,14 @@ export class Vwmasterplanpagos extends Entity {
     length: 8,
     //   precision: ,
     scale: 0,
-    db2: {columnName: 'CANTOTALCUOTAS', dataType: 'DOUBLE', dataLength: 8, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'CANTOTALCUOTAS',
+      dataType: 'DOUBLE',
+      dataLength: 8,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   cantotalcuotas?: number;
 
@@ -28,7 +45,14 @@ export class Vwmasterplanpagos extends Entity {
     length: 8,
     //   precision: ,
     scale: 0,
-    db2: {columnName: 'CANTOTALINTERES', dataType: 'DOUBLE', dataLength: 8, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'CANTOTALINTERES',
+      dataType: 'DOUBLE',
+      dataLength: 8,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   cantotalinteres?: number;
 
@@ -37,7 +61,14 @@ export class Vwmasterplanpagos extends Entity {
     length: 8,
     //  precision: ,
     scale: 0,
-    db2: {columnName: 'CANTOTALINTERESMORATORIO', dataType: 'DOUBLE', dataLength: 8, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'CANTOTALINTERESMORATORIO',
+      dataType: 'DOUBLE',
+      dataLength: 8,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   cantotalinteresmoratorio?: number;
 
@@ -47,7 +78,14 @@ export class Vwmasterplanpagos extends Entity {
     length: 5,
     //  precision: ,
     scale: 0,
-    db2: {columnName: 'IDMOVIMIENTO', dataType: 'CHARACTER', dataLength: 5, dataPrecision: undefined, dataScale: 0, nullable: 'N'},
+    db2: {
+      columnName: 'IDMOVIMIENTO',
+      dataType: 'CHARACTER',
+      dataLength: 5,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'N',
+    },
   })
   idmovimiento: string;
 
@@ -58,7 +96,14 @@ export class Vwmasterplanpagos extends Entity {
     id: 1,
     //  precision: ,
     scale: 0,
-    db2: {columnName: 'NUMOPERACION', dataType: 'CHARACTER', dataLength: 15, dataPrecision: undefined, dataScale: 0, nullable: 'N'},
+    db2: {
+      columnName: 'NUMOPERACION',
+      dataType: 'CHARACTER',
+      dataLength: 15,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'N',
+    },
   })
   numoperacion: string;
 
@@ -67,7 +112,14 @@ export class Vwmasterplanpagos extends Entity {
     length: 8,
     //  precision: ,
     scale: 0,
-    db2: {columnName: 'PENDTOTALCUOTAS', dataType: 'DOUBLE', dataLength: 8, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'PENDTOTALCUOTAS',
+      dataType: 'DOUBLE',
+      dataLength: 8,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   pendtotalcuotas?: number;
 
@@ -76,7 +128,14 @@ export class Vwmasterplanpagos extends Entity {
     length: 8,
     //  precision: ,
     scale: 0,
-    db2: {columnName: 'PENDTOTALINTERES', dataType: 'DOUBLE', dataLength: 8, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'PENDTOTALINTERES',
+      dataType: 'DOUBLE',
+      dataLength: 8,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   pendtotalinteres?: number;
 
@@ -85,7 +144,14 @@ export class Vwmasterplanpagos extends Entity {
     length: 8,
     //  precision: ,
     scale: 0,
-    db2: {columnName: 'PENDTOTALINTERESMORATORIO', dataType: 'DOUBLE', dataLength: 8, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'PENDTOTALINTERESMORATORIO',
+      dataType: 'DOUBLE',
+      dataLength: 8,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   pendtotalinteresmoratorio?: number;
 
@@ -94,7 +160,14 @@ export class Vwmasterplanpagos extends Entity {
     length: 8,
     //  precision: ,
     scale: 0,
-    db2: {columnName: 'PENDTOTALMONTOS', dataType: 'DOUBLE', dataLength: 8, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'PENDTOTALMONTOS',
+      dataType: 'DOUBLE',
+      dataLength: 8,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   pendtotalmontos?: number;
 
@@ -103,7 +176,14 @@ export class Vwmasterplanpagos extends Entity {
     length: 8,
     //  precision: ,
     scale: 0,
-    db2: {columnName: 'TOTALCUOTAS', dataType: 'DOUBLE', dataLength: 8, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'TOTALCUOTAS',
+      dataType: 'DOUBLE',
+      dataLength: 8,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   totalcuotas?: number;
 
@@ -112,7 +192,14 @@ export class Vwmasterplanpagos extends Entity {
     length: 8,
     //  precision: ,
     scale: 0,
-    db2: {columnName: 'TOTALINTERES', dataType: 'DOUBLE', dataLength: 8, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'TOTALINTERES',
+      dataType: 'DOUBLE',
+      dataLength: 8,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   totalinteres?: number;
 
@@ -121,7 +208,14 @@ export class Vwmasterplanpagos extends Entity {
     length: 8,
     //  precision: ,
     scale: 0,
-    db2: {columnName: 'TOTALINTERESMORATORIO', dataType: 'DOUBLE', dataLength: 8, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'TOTALINTERESMORATORIO',
+      dataType: 'DOUBLE',
+      dataLength: 8,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   totalinteresmoratorio?: number;
 
@@ -130,7 +224,14 @@ export class Vwmasterplanpagos extends Entity {
     length: 8,
     //  precision: ,
     scale: 0,
-    db2: {columnName: 'TOTALMONTOS', dataType: 'DOUBLE', dataLength: 8, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'TOTALMONTOS',
+      dataType: 'DOUBLE',
+      dataLength: 8,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   totalmontos?: number;
 
@@ -149,4 +250,5 @@ export interface VwmasterplanpagosRelations {
   // describe navigational properties here
 }
 
-export type VwmasterplanpagosWithRelations = Vwmasterplanpagos & VwmasterplanpagosRelations;
+export type VwmasterplanpagosWithRelations = Vwmasterplanpagos &
+  VwmasterplanpagosRelations;

@@ -1,5 +1,8 @@
 import {DefaultCrudRepository} from '@loopback/repository';
-import {Certificadosusdmontostotales, CertificadosusdmontostotalesRelations} from '../models';
+import {
+  Certificadosusdmontostotales,
+  CertificadosusdmontostotalesRelations,
+} from '../models';
 import {Db2CoopeDataSource} from '../datasources';
 import {inject} from '@loopback/core';
 
@@ -8,9 +11,7 @@ export class CertificadosusdmontostotalesRepository extends DefaultCrudRepositor
   typeof Certificadosusdmontostotales.prototype.id,
   CertificadosusdmontostotalesRelations
 > {
-  constructor(
-    @inject('datasources.db2coope') dataSource: Db2CoopeDataSource,
-  ) {
+  constructor(@inject('datasources.db2coope') dataSource: Db2CoopeDataSource) {
     super(Certificadosusdmontostotales, dataSource);
   }
 }

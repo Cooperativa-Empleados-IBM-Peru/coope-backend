@@ -8,9 +8,7 @@ export class CertificadosusdmontosRepository extends DefaultCrudRepository<
   typeof Certificadosusdmontos.prototype.id,
   CertificadosusdmontosRelations
 > {
-  constructor(
-    @inject('datasources.db2coope') dataSource: Db2CoopeDataSource,
-  ) {
+  constructor(@inject('datasources.db2coope') dataSource: Db2CoopeDataSource) {
     super(Certificadosusdmontos, dataSource);
   }
 }

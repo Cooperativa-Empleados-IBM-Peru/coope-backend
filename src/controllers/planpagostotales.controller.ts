@@ -1,12 +1,5 @@
-import {
-  Filter,
-  FilterExcludingWhere,
-  repository
-} from '@loopback/repository';
-import {
-  get,
-  getModelSchemaRef, param
-} from '@loopback/rest';
+import {Filter, FilterExcludingWhere, repository} from '@loopback/repository';
+import {get, getModelSchemaRef, param} from '@loopback/rest';
 import {Planpagostotales} from '../models';
 import {PlanpagostotalesRepository} from '../repositories';
 
@@ -14,7 +7,7 @@ export class PlanpagostotalesController {
   constructor(
     @repository(PlanpagostotalesRepository)
     public planpagostotalesRepository: PlanpagostotalesRepository,
-  ) { }
+  ) {}
   /*
     @get('/planpagostotales/count', {
       responses: {
@@ -38,7 +31,9 @@ export class PlanpagostotalesController {
           'application/json': {
             schema: {
               type: 'array',
-              items: getModelSchemaRef(Planpagostotales, {includeRelations: true}),
+              items: getModelSchemaRef(Planpagostotales, {
+                includeRelations: true,
+              }),
             },
           },
         },
@@ -51,14 +46,15 @@ export class PlanpagostotalesController {
     return this.planpagostotalesRepository.find(filter);
   }
 
-
   @get('/planpagostotales/{id}', {
     responses: {
       '200': {
         description: 'Planpagostotales model instance',
         content: {
           'application/json': {
-            schema: getModelSchemaRef(Planpagostotales, {includeRelations: true}),
+            schema: getModelSchemaRef(Planpagostotales, {
+              includeRelations: true,
+            }),
           },
         },
       },
@@ -66,9 +62,9 @@ export class PlanpagostotalesController {
   })
   async findById(
     @param.path.string('id') id: string,
-    @param.filter(Planpagostotales, {exclude: 'where'}) filter?: FilterExcludingWhere<Planpagostotales>
+    @param.filter(Planpagostotales, {exclude: 'where'})
+    filter?: FilterExcludingWhere<Planpagostotales>,
   ): Promise<Planpagostotales> {
     return this.planpagostotalesRepository.findById(id, filter);
   }
-
 }

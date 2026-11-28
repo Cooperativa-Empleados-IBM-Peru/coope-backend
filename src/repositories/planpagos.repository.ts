@@ -8,9 +8,7 @@ export class PlanpagosRepository extends DefaultCrudRepository<
   typeof Planpagos.prototype.cuota,
   PlanpagosRelations
 > {
-  constructor(
-    @inject('datasources.db2coope') dataSource: Db2CoopeDataSource,
-  ) {
+  constructor(@inject('datasources.db2coope') dataSource: Db2CoopeDataSource) {
     super(Planpagos, dataSource);
   }
 }

@@ -2,7 +2,10 @@ import {Entity, model, property} from '@loopback/repository';
 import {db2config} from '../datasources/env';
 
 @model({
-  settings: {idInjection: false, db2: {schema: db2config.schema, table: 'VWCOOPEADMINS'}}
+  settings: {
+    idInjection: false,
+    db2: {schema: db2config.schema, table: 'VWCOOPEADMINS'},
+  },
 })
 export class Vwcoopeadmins extends Entity {
   @property({
@@ -10,7 +13,14 @@ export class Vwcoopeadmins extends Entity {
     length: 1,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'ACTIVO', dataType: 'BOOLEAN', dataLength: 1, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'ACTIVO',
+      dataType: 'BOOLEAN',
+      dataLength: 1,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   activo?: boolean;
 
@@ -20,7 +30,14 @@ export class Vwcoopeadmins extends Entity {
     length: 15,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'CODEMPLEADO', dataType: 'CHARACTER', dataLength: 15, dataPrecision: undefined, dataScale: 0, nullable: 'N'},
+    db2: {
+      columnName: 'CODEMPLEADO',
+      dataType: 'CHARACTER',
+      dataLength: 15,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'N',
+    },
   })
   codempleado: string;
 
@@ -32,7 +49,14 @@ export class Vwcoopeadmins extends Entity {
     // precision: ,
     scale: 0,
     id: 1,
-    db2: {columnName: 'UUID', dataType: 'CHARACTER', dataLength: 40, dataPrecision: undefined, dataScale: 0, nullable: 'N'},
+    db2: {
+      columnName: 'UUID',
+      dataType: 'CHARACTER',
+      dataLength: 40,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'N',
+    },
   })
   uuid: string;
 
@@ -43,7 +67,14 @@ export class Vwcoopeadmins extends Entity {
     length: 5,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'CODPAIS', dataType: 'CHARACTER', dataLength: 5, dataPrecision: undefined, dataScale: 0, nullable: 'N'},
+    db2: {
+      columnName: 'CODPAIS',
+      dataType: 'CHARACTER',
+      dataLength: 5,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'N',
+    },
   })
   codpais: string;
 
@@ -52,9 +83,32 @@ export class Vwcoopeadmins extends Entity {
     length: 50,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'EMAILEMPLEADO', dataType: 'CHARACTER', dataLength: 50, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'EMAILEMPLEADO',
+      dataType: 'CHARACTER',
+      dataLength: 50,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   emailempleado?: string;
+
+  @property({
+    type: 'string',
+    length: 50,
+    // precision: ,
+    scale: 0,
+    db2: {
+      columnName: 'EMAILEMPLEADO2',
+      dataType: 'CHARACTER',
+      dataLength: 50,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
+  })
+  emailempleado2?: string;
 
   @property({
     type: 'date',
@@ -62,7 +116,14 @@ export class Vwcoopeadmins extends Entity {
     length: 13,
     // precision: ,
     scale: 12,
-    db2: {columnName: 'FECMODIFICACION', dataType: 'TIMESTAMP', dataLength: 13, dataPrecision: undefined, dataScale: 12, nullable: 'Y'},
+    db2: {
+      columnName: 'FECMODIFICACION',
+      dataType: 'TIMESTAMP',
+      dataLength: 13,
+      dataPrecision: undefined,
+      dataScale: 12,
+      nullable: 'Y',
+    },
   })
   fecmodificacion?: string;
 
@@ -71,7 +132,14 @@ export class Vwcoopeadmins extends Entity {
     length: 1,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'INBLUEPAGES', dataType: 'BOOLEAN', dataLength: 1, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'INBLUEPAGES',
+      dataType: 'BOOLEAN',
+      dataLength: 1,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   inbluepages?: boolean;
 
@@ -80,7 +148,14 @@ export class Vwcoopeadmins extends Entity {
     length: 1,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'ISADMIN', dataType: 'BOOLEAN', dataLength: 1, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'ISADMIN',
+      dataType: 'BOOLEAN',
+      dataLength: 1,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   isadmin?: boolean;
 
@@ -90,7 +165,14 @@ export class Vwcoopeadmins extends Entity {
     length: 50,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'NOMBREEMPLEADO', dataType: 'CHARACTER', dataLength: 50, dataPrecision: undefined, dataScale: 0, nullable: 'N'},
+    db2: {
+      columnName: 'NOMBREEMPLEADO',
+      dataType: 'CHARACTER',
+      dataLength: 50,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'N',
+    },
   })
   nombreempleado: string;
 

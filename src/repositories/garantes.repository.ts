@@ -8,9 +8,7 @@ export class GarantesRepository extends DefaultCrudRepository<
   typeof Garantes.prototype.codempleado,
   GarantesRelations
 > {
-  constructor(
-    @inject('datasources.db2coope') dataSource: Db2CoopeDataSource,
-  ) {
+  constructor(@inject('datasources.db2coope') dataSource: Db2CoopeDataSource) {
     super(Garantes, dataSource);
   }
 }

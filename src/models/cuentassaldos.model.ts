@@ -2,7 +2,10 @@ import {Entity, model, property} from '@loopback/repository';
 import {db2config} from '../datasources/env';
 
 @model({
-  settings: {idInjection: false, db2: {schema: db2config.schema, table: 'CUENTASSALDOS'}}
+  settings: {
+    idInjection: false,
+    db2: {schema: db2config.schema, table: 'CUENTASSALDOS'},
+  },
 })
 export class Cuentassaldos extends Entity {
   @property({
@@ -10,7 +13,14 @@ export class Cuentassaldos extends Entity {
     length: 8,
     //    precision: ,
     scale: 0,
-    db2: {columnName: 'SOLSALDOPRESAUTO', dataType: 'DOUBLE', dataLength: 8, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'SOLSALDOPRESAUTO',
+      dataType: 'DOUBLE',
+      dataLength: 8,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   solsaldopresauto?: number;
 
@@ -19,7 +29,14 @@ export class Cuentassaldos extends Entity {
     length: 8,
     //    precision: ,
     scale: 0,
-    db2: {columnName: 'SOLSALDOPRESCONSUMO', dataType: 'DOUBLE', dataLength: 8, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'SOLSALDOPRESCONSUMO',
+      dataType: 'DOUBLE',
+      dataLength: 8,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   solsaldopresconsumo?: number;
 
@@ -28,7 +45,14 @@ export class Cuentassaldos extends Entity {
     length: 8,
     //    precision: ,
     scale: 0,
-    db2: {columnName: 'SOLSALDOPRESCORTOPLAZO', dataType: 'DOUBLE', dataLength: 8, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'SOLSALDOPRESCORTOPLAZO',
+      dataType: 'DOUBLE',
+      dataLength: 8,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   solsaldoprescortoplazo?: number;
 
@@ -37,7 +61,14 @@ export class Cuentassaldos extends Entity {
     length: 8,
     //    precision: ,
     scale: 0,
-    db2: {columnName: 'SOLSALDOPRESESP1', dataType: 'DOUBLE', dataLength: 8, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'SOLSALDOPRESESP1',
+      dataType: 'DOUBLE',
+      dataLength: 8,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   solsaldopresesp1?: number;
 
@@ -46,7 +77,14 @@ export class Cuentassaldos extends Entity {
     length: 8,
     //    precision: ,
     scale: 0,
-    db2: {columnName: 'SOLSALDOPRESESP2', dataType: 'DOUBLE', dataLength: 8, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'SOLSALDOPRESESP2',
+      dataType: 'DOUBLE',
+      dataLength: 8,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   solsaldopresesp2?: number;
 
@@ -55,7 +93,14 @@ export class Cuentassaldos extends Entity {
     length: 8,
     //   precision: ,
     scale: 0,
-    db2: {columnName: 'SOLSALDOPRESHIPOTECARIO', dataType: 'DOUBLE', dataLength: 8, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'SOLSALDOPRESHIPOTECARIO',
+      dataType: 'DOUBLE',
+      dataLength: 8,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   solsaldopreshipotecario?: number;
 
@@ -64,7 +109,14 @@ export class Cuentassaldos extends Entity {
     length: 8,
     //   precision: ,
     scale: 0,
-    db2: {columnName: 'SOLSALDOPRESLARGOPLAZO', dataType: 'DOUBLE', dataLength: 8, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'SOLSALDOPRESLARGOPLAZO',
+      dataType: 'DOUBLE',
+      dataLength: 8,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   solsaldopreslargoplazo?: number;
 
@@ -73,7 +125,14 @@ export class Cuentassaldos extends Entity {
     length: 8,
     //   precision: ,
     scale: 0,
-    db2: {columnName: 'SOLSALDOPRESMEDIANOPLAZO', dataType: 'DOUBLE', dataLength: 8, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'SOLSALDOPRESMEDIANOPLAZO',
+      dataType: 'DOUBLE',
+      dataLength: 8,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   solsaldopresmedianoplazo?: number;
 
@@ -82,7 +141,14 @@ export class Cuentassaldos extends Entity {
     length: 8,
     //   precision: ,
     scale: 0,
-    db2: {columnName: 'SOLSALDOPRESPS1', dataType: 'DOUBLE', dataLength: 8, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'SOLSALDOPRESPS1',
+      dataType: 'DOUBLE',
+      dataLength: 8,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   solsaldopresps1?: number;
 
@@ -91,7 +157,14 @@ export class Cuentassaldos extends Entity {
     length: 8,
     //    precision: ,
     scale: 0,
-    db2: {columnName: 'SOLSALDOPRESSOLAFIRMA', dataType: 'DOUBLE', dataLength: 8, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'SOLSALDOPRESSOLAFIRMA',
+      dataType: 'DOUBLE',
+      dataLength: 8,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   solsaldopressolafirma?: number;
 
@@ -100,7 +173,14 @@ export class Cuentassaldos extends Entity {
     length: 8,
     //    precision: ,
     scale: 0,
-    db2: {columnName: 'USDSALDOPRESAUTO', dataType: 'DOUBLE', dataLength: 8, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'USDSALDOPRESAUTO',
+      dataType: 'DOUBLE',
+      dataLength: 8,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   usdsaldopresauto?: number;
 
@@ -109,7 +189,14 @@ export class Cuentassaldos extends Entity {
     length: 8,
     //    precision: ,
     scale: 0,
-    db2: {columnName: 'USDSALDOPRESCONSUMO', dataType: 'DOUBLE', dataLength: 8, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'USDSALDOPRESCONSUMO',
+      dataType: 'DOUBLE',
+      dataLength: 8,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   usdsaldopresconsumo?: number;
 
@@ -118,7 +205,14 @@ export class Cuentassaldos extends Entity {
     length: 8,
     //    precision: ,
     scale: 0,
-    db2: {columnName: 'USDSALDOPRESCORTOPLAZO', dataType: 'DOUBLE', dataLength: 8, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'USDSALDOPRESCORTOPLAZO',
+      dataType: 'DOUBLE',
+      dataLength: 8,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   usdsaldoprescortoplazo?: number;
 
@@ -127,7 +221,14 @@ export class Cuentassaldos extends Entity {
     length: 8,
     //   precision: ,
     scale: 0,
-    db2: {columnName: 'USDSALDOPRESESP1', dataType: 'DOUBLE', dataLength: 8, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'USDSALDOPRESESP1',
+      dataType: 'DOUBLE',
+      dataLength: 8,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   usdsaldopresesp1?: number;
 
@@ -136,7 +237,14 @@ export class Cuentassaldos extends Entity {
     length: 8,
     //    precision: ,
     scale: 0,
-    db2: {columnName: 'USDSALDOPRESESP2', dataType: 'DOUBLE', dataLength: 8, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'USDSALDOPRESESP2',
+      dataType: 'DOUBLE',
+      dataLength: 8,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   usdsaldopresesp2?: number;
 
@@ -145,7 +253,14 @@ export class Cuentassaldos extends Entity {
     length: 8,
     //    precision: ,
     scale: 0,
-    db2: {columnName: 'USDSALDOPRESHIPOTECARIO', dataType: 'DOUBLE', dataLength: 8, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'USDSALDOPRESHIPOTECARIO',
+      dataType: 'DOUBLE',
+      dataLength: 8,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   usdsaldopreshipotecario?: number;
 
@@ -154,7 +269,14 @@ export class Cuentassaldos extends Entity {
     length: 8,
     //    precision: ,
     scale: 0,
-    db2: {columnName: 'USDSALDOPRESLARGOPLAZO', dataType: 'DOUBLE', dataLength: 8, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'USDSALDOPRESLARGOPLAZO',
+      dataType: 'DOUBLE',
+      dataLength: 8,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   usdsaldopreslargoplazo?: number;
 
@@ -163,7 +285,14 @@ export class Cuentassaldos extends Entity {
     length: 8,
     //    precision: ,
     scale: 0,
-    db2: {columnName: 'USDSALDOPRESMEDIANOPLAZO', dataType: 'DOUBLE', dataLength: 8, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'USDSALDOPRESMEDIANOPLAZO',
+      dataType: 'DOUBLE',
+      dataLength: 8,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   usdsaldopresmedianoplazo?: number;
 
@@ -172,7 +301,14 @@ export class Cuentassaldos extends Entity {
     length: 8,
     //   precision: ,
     scale: 0,
-    db2: {columnName: 'USDSALDOPRESPS1', dataType: 'DOUBLE', dataLength: 8, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'USDSALDOPRESPS1',
+      dataType: 'DOUBLE',
+      dataLength: 8,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   usdsaldopresps1?: number;
 
@@ -181,7 +317,14 @@ export class Cuentassaldos extends Entity {
     length: 8,
     //   precision: ,
     scale: 0,
-    db2: {columnName: 'USDSALDOPRESSOLAFIRMA', dataType: 'DOUBLE', dataLength: 8, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'USDSALDOPRESSOLAFIRMA',
+      dataType: 'DOUBLE',
+      dataLength: 8,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   usdsaldopressolafirma?: number;
 
@@ -193,7 +336,14 @@ export class Cuentassaldos extends Entity {
     id: 1,
     //    precision: ,
     scale: 0,
-    db2: {columnName: 'UUID', dataType: 'CHARACTER', dataLength: 40, dataPrecision: undefined, dataScale: 0, nullable: 'N'},
+    db2: {
+      columnName: 'UUID',
+      dataType: 'CHARACTER',
+      dataLength: 40,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'N',
+    },
   })
   uuid: string;
 

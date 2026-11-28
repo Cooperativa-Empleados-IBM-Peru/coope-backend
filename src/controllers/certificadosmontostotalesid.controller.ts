@@ -1,11 +1,5 @@
-import {
-  FilterExcludingWhere,
-  repository
-} from '@loopback/repository';
-import {
-  get,
-  getModelSchemaRef, param, response
-} from '@loopback/rest';
+import {FilterExcludingWhere, repository} from '@loopback/repository';
+import {get, getModelSchemaRef, param, response} from '@loopback/rest';
 import {Certificadosmontostotalesid} from '../models';
 import {CertificadosmontostotalesidRepository} from '../repositories';
 
@@ -13,7 +7,7 @@ export class CertificadosMontosTotalesIdController {
   constructor(
     @repository(CertificadosmontostotalesidRepository)
     public certificadosmontostotalesidRepository: CertificadosmontostotalesidRepository,
-  ) { }
+  ) {}
   /*
     @post('/certificadosmontostotalesids')
     @response(200, {
@@ -89,13 +83,16 @@ export class CertificadosMontosTotalesIdController {
     description: 'Certificadosmontostotalesid model instance',
     content: {
       'application/json': {
-        schema: getModelSchemaRef(Certificadosmontostotalesid, {includeRelations: true}),
+        schema: getModelSchemaRef(Certificadosmontostotalesid, {
+          includeRelations: true,
+        }),
       },
     },
   })
   async findById(
     @param.path.string('id') id: string,
-    @param.filter(Certificadosmontostotalesid, {exclude: 'where'}) filter?: FilterExcludingWhere<Certificadosmontostotalesid>
+    @param.filter(Certificadosmontostotalesid, {exclude: 'where'})
+    filter?: FilterExcludingWhere<Certificadosmontostotalesid>,
   ): Promise<Certificadosmontostotalesid> {
     return this.certificadosmontostotalesidRepository.findById(id, filter);
   }
@@ -137,5 +134,4 @@ export class CertificadosMontosTotalesIdController {
       await this.certificadosmontostotalesidRepository.deleteById(id);
     }
   */
-
 }

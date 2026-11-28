@@ -1,8 +1,5 @@
 import {FilterExcludingWhere, repository} from '@loopback/repository';
-import {
-  get,
-  getModelSchemaRef, param, response
-} from '@loopback/rest';
+import {get, getModelSchemaRef, param, response} from '@loopback/rest';
 import {Vwmasterplanpagos} from '../models';
 import {VwmasterplanpagosRepository} from '../repositories';
 
@@ -10,7 +7,7 @@ export class VwmasterplanpagosController {
   constructor(
     @repository(VwmasterplanpagosRepository)
     public vwmasterplanpagosRepository: VwmasterplanpagosRepository,
-  ) { }
+  ) {}
   /*
     @post('/vwmasterplanpagos')
     @response(200, {
@@ -92,7 +89,8 @@ export class VwmasterplanpagosController {
   })
   async findById(
     @param.path.string('id') id: string,
-    @param.filter(Vwmasterplanpagos, {exclude: 'where'}) filter?: FilterExcludingWhere<Vwmasterplanpagos>
+    @param.filter(Vwmasterplanpagos, {exclude: 'where'})
+    filter?: FilterExcludingWhere<Vwmasterplanpagos>,
   ): Promise<Vwmasterplanpagos> {
     return this.vwmasterplanpagosRepository.findById(id, filter);
   }

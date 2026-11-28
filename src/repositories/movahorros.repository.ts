@@ -8,9 +8,7 @@ export class MovahorrosRepository extends DefaultCrudRepository<
   typeof Movahorros.prototype.codempresa,
   MovahorrosRelations
 > {
-  constructor(
-    @inject('datasources.db2coope') dataSource: Db2CoopeDataSource,
-  ) {
+  constructor(@inject('datasources.db2coope') dataSource: Db2CoopeDataSource) {
     super(Movahorros, dataSource);
   }
 }

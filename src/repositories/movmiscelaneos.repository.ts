@@ -8,9 +8,7 @@ export class MovmiscelaneosRepository extends DefaultCrudRepository<
   typeof Movmiscelaneos.prototype.codempresa,
   MovmiscelaneosRelations
 > {
-  constructor(
-    @inject('datasources.db2coope') dataSource: Db2CoopeDataSource,
-  ) {
+  constructor(@inject('datasources.db2coope') dataSource: Db2CoopeDataSource) {
     super(Movmiscelaneos, dataSource);
   }
 }

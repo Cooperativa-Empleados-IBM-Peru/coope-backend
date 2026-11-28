@@ -2,7 +2,10 @@ import {Entity, model, property} from '@loopback/repository';
 import {db2config} from '../datasources/env';
 
 @model({
-  settings: {idInjection: false, db2: {schema: db2config.schema, table: 'PLANPAGOSMONTOS'}}
+  settings: {
+    idInjection: false,
+    db2: {schema: db2config.schema, table: 'PLANPAGOSMONTOS'},
+  },
 })
 export class Planpagosmontos extends Entity {
   @property({
@@ -12,7 +15,14 @@ export class Planpagosmontos extends Entity {
     // precision: ,
     id: 1,
     scale: 0,
-    db2: {columnName: 'CUOTA', dataType: 'SMALLINT', dataLength: 2, dataPrecision: undefined, dataScale: 0, nullable: 'N'},
+    db2: {
+      columnName: 'CUOTA',
+      dataType: 'SMALLINT',
+      dataLength: 2,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'N',
+    },
   })
   cuota: number;
 
@@ -23,7 +33,14 @@ export class Planpagosmontos extends Entity {
     // precision: ,
     id: 2,
     scale: 0,
-    db2: {columnName: 'IDMOVIMIENTO', dataType: 'CHARACTER', dataLength: 5, dataPrecision: undefined, dataScale: 0, nullable: 'N'},
+    db2: {
+      columnName: 'IDMOVIMIENTO',
+      dataType: 'CHARACTER',
+      dataLength: 5,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'N',
+    },
   })
   idmovimiento: string;
 
@@ -32,7 +49,14 @@ export class Planpagosmontos extends Entity {
     length: 8,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'INTERES', dataType: 'DOUBLE', dataLength: 8, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'INTERES',
+      dataType: 'DOUBLE',
+      dataLength: 8,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   interes?: number;
 
@@ -41,7 +65,14 @@ export class Planpagosmontos extends Entity {
     length: 8,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'INTERESMORATORIO', dataType: 'DOUBLE', dataLength: 8, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'INTERESMORATORIO',
+      dataType: 'DOUBLE',
+      dataLength: 8,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   interesmoratorio?: number;
 
@@ -50,7 +81,14 @@ export class Planpagosmontos extends Entity {
     length: 8,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'MONTO', dataType: 'DOUBLE', dataLength: 8, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'MONTO',
+      dataType: 'DOUBLE',
+      dataLength: 8,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   monto?: number;
 
@@ -59,7 +97,14 @@ export class Planpagosmontos extends Entity {
     length: 8,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'MONTOCUOTA', dataType: 'DOUBLE', dataLength: 8, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'MONTOCUOTA',
+      dataType: 'DOUBLE',
+      dataLength: 8,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   montocuota?: number;
 
@@ -70,7 +115,14 @@ export class Planpagosmontos extends Entity {
     // precision: ,
     id: 3,
     scale: 0,
-    db2: {columnName: 'NUMOPERACION', dataType: 'CHARACTER', dataLength: 15, dataPrecision: undefined, dataScale: 0, nullable: 'N'},
+    db2: {
+      columnName: 'NUMOPERACION',
+      dataType: 'CHARACTER',
+      dataLength: 15,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'N',
+    },
   })
   numoperacion: string;
 
@@ -89,4 +141,5 @@ export interface PlanpagosmontosRelations {
   // describe navigational properties here
 }
 
-export type PlanpagosmontosWithRelations = Planpagosmontos & PlanpagosmontosRelations;
+export type PlanpagosmontosWithRelations = Planpagosmontos &
+  PlanpagosmontosRelations;

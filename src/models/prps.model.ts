@@ -1,7 +1,12 @@
 import {Entity, model, property} from '@loopback/repository';
 import {db2config} from '../datasources/env';
 
-@model({settings: {idInjection: false, db2: {schema: db2config.schema, table: 'PRPS'}}})
+@model({
+  settings: {
+    idInjection: false,
+    db2: {schema: db2config.schema, table: 'PRPS'},
+  },
+})
 export class Prps extends Entity {
   @property({
     type: 'string',
@@ -10,7 +15,14 @@ export class Prps extends Entity {
     // precision: ,
     id: 1,
     scale: 0,
-    db2: {columnName: 'CODEMPRESA', dataType: 'CHARACTER', dataLength: 5, dataPrecision: undefined, dataScale: 0, nullable: 'N'},
+    db2: {
+      columnName: 'CODEMPRESA',
+      dataType: 'CHARACTER',
+      dataLength: 5,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'N',
+    },
   })
   codempresa: string;
 
@@ -21,7 +33,14 @@ export class Prps extends Entity {
     // precision: ,
     id: 2,
     scale: 0,
-    db2: {columnName: 'CTACLIENTE', dataType: 'CHARACTER', dataLength: 10, dataPrecision: undefined, dataScale: 0, nullable: 'N'},
+    db2: {
+      columnName: 'CTACLIENTE',
+      dataType: 'CHARACTER',
+      dataLength: 10,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'N',
+    },
   })
   ctacliente: string;
 
@@ -32,7 +51,14 @@ export class Prps extends Entity {
     id: 3,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'DOCID', dataType: 'CHARACTER', dataLength: 15, dataPrecision: undefined, dataScale: 0, nullable: 'N'},
+    db2: {
+      columnName: 'DOCID',
+      dataType: 'CHARACTER',
+      dataLength: 15,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'N',
+    },
   })
   docid: string;
 
@@ -41,7 +67,14 @@ export class Prps extends Entity {
     length: 4,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'FECCARTERA', dataType: 'DATE', dataLength: 4, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'FECCARTERA',
+      dataType: 'DATE',
+      dataLength: 4,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   feccartera?: string;
 
@@ -50,7 +83,14 @@ export class Prps extends Entity {
     length: 13,
     // precision: ,
     scale: 12,
-    db2: {columnName: 'FECMODIFICACION', dataType: 'TIMESTAMP', dataLength: 13, dataPrecision: undefined, dataScale: 12, nullable: 'Y'},
+    db2: {
+      columnName: 'FECMODIFICACION',
+      dataType: 'TIMESTAMP',
+      dataLength: 13,
+      dataPrecision: undefined,
+      dataScale: 12,
+      nullable: 'Y',
+    },
   })
   fecmodificacion?: string;
 
@@ -59,7 +99,14 @@ export class Prps extends Entity {
     length: 4,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'FECRENOVACION', dataType: 'DATE', dataLength: 4, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'FECRENOVACION',
+      dataType: 'DATE',
+      dataLength: 4,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   fecrenovacion?: string;
 
@@ -68,7 +115,14 @@ export class Prps extends Entity {
     length: 4,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'FECVENCIMIENTO', dataType: 'DATE', dataLength: 4, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'FECVENCIMIENTO',
+      dataType: 'DATE',
+      dataLength: 4,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   fecvencimiento?: string;
 
@@ -79,7 +133,14 @@ export class Prps extends Entity {
     // precision: ,
     id: 4,
     scale: 0,
-    db2: {columnName: 'IDMOVIMIENTO', dataType: 'CHARACTER', dataLength: 5, dataPrecision: undefined, dataScale: 0, nullable: 'N'},
+    db2: {
+      columnName: 'IDMOVIMIENTO',
+      dataType: 'CHARACTER',
+      dataLength: 5,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'N',
+    },
   })
   idmovimiento: string;
 
@@ -88,7 +149,14 @@ export class Prps extends Entity {
     length: 8,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'INTERES', dataType: 'DOUBLE', dataLength: 8, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'INTERES',
+      dataType: 'DOUBLE',
+      dataLength: 8,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   interes?: number;
 
@@ -97,7 +165,14 @@ export class Prps extends Entity {
     length: 8,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'MONTO', dataType: 'DOUBLE', dataLength: 8, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'MONTO',
+      dataType: 'DOUBLE',
+      dataLength: 8,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   monto?: number;
 
@@ -106,7 +181,14 @@ export class Prps extends Entity {
     length: 2,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'NROCUOTAS', dataType: 'SMALLINT', dataLength: 2, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'NROCUOTAS',
+      dataType: 'SMALLINT',
+      dataLength: 2,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   nrocuotas?: number;
 
@@ -117,7 +199,14 @@ export class Prps extends Entity {
     // precision: ,
     id: 5,
     scale: 0,
-    db2: {columnName: 'NUMOPERACION', dataType: 'CHARACTER', dataLength: 15, dataPrecision: undefined, dataScale: 0, nullable: 'N'},
+    db2: {
+      columnName: 'NUMOPERACION',
+      dataType: 'CHARACTER',
+      dataLength: 15,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'N',
+    },
   })
   numoperacion: string;
 
@@ -126,7 +215,14 @@ export class Prps extends Entity {
     length: 8,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'SALDO', dataType: 'DOUBLE', dataLength: 8, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'SALDO',
+      dataType: 'DOUBLE',
+      dataLength: 8,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   saldo?: number;
 
@@ -137,7 +233,14 @@ export class Prps extends Entity {
     // precision: ,
     id: 6,
     scale: 0,
-    db2: {columnName: 'TIPOID', dataType: 'CHARACTER', dataLength: 5, dataPrecision: undefined, dataScale: 0, nullable: 'N'},
+    db2: {
+      columnName: 'TIPOID',
+      dataType: 'CHARACTER',
+      dataLength: 5,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'N',
+    },
   })
   tipoid: string;
 
@@ -146,7 +249,14 @@ export class Prps extends Entity {
     length: 5,
     // precision: ,
     scale: 0,
-    db2: {columnName: 'TIPOPAGO', dataType: 'CHARACTER', dataLength: 5, dataPrecision: undefined, dataScale: 0, nullable: 'Y'},
+    db2: {
+      columnName: 'TIPOPAGO',
+      dataType: 'CHARACTER',
+      dataLength: 5,
+      dataPrecision: undefined,
+      dataScale: 0,
+      nullable: 'Y',
+    },
   })
   tipopago?: string;
 

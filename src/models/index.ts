@@ -55,4 +55,3 @@ export * from './vwsociosexempleados.model';
 export * from './vwsociosibm.model';
 export * from './vwsociosinactivos.model';
 export * from './vwsocioskyndryl.model';
-

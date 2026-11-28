@@ -1,12 +1,5 @@
-import {
-  Filter,
-  FilterExcludingWhere,
-  repository
-} from '@loopback/repository';
-import {
-  get,
-  getModelSchemaRef, param
-} from '@loopback/rest';
+import {Filter, FilterExcludingWhere, repository} from '@loopback/repository';
+import {get, getModelSchemaRef, param} from '@loopback/rest';
 import {Garantizados} from '../models';
 import {GarantizadosRepository} from '../repositories';
 
@@ -14,7 +7,7 @@ export class GarantizadosController {
   constructor(
     @repository(GarantizadosRepository)
     public garantizadosRepository: GarantizadosRepository,
-  ) { }
+  ) {}
   /*
     @get('/garantizados/count', {
       responses: {
@@ -65,9 +58,9 @@ export class GarantizadosController {
   })
   async findById(
     @param.path.string('id') id: string,
-    @param.filter(Garantizados, {exclude: 'where'}) filter?: FilterExcludingWhere<Garantizados>
+    @param.filter(Garantizados, {exclude: 'where'})
+    filter?: FilterExcludingWhere<Garantizados>,
   ): Promise<Garantizados> {
     return this.garantizadosRepository.findById(id, filter);
   }
-
 }

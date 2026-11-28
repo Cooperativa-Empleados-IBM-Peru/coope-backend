@@ -1,12 +1,5 @@
-import {
-  Filter,
-  FilterExcludingWhere,
-  repository
-} from '@loopback/repository';
-import {
-  get,
-  getModelSchemaRef, param
-} from '@loopback/rest';
+import {Filter, FilterExcludingWhere, repository} from '@loopback/repository';
+import {get, getModelSchemaRef, param} from '@loopback/rest';
 import {Fra} from '../models';
 import {FraRepository} from '../repositories';
 
@@ -14,7 +7,7 @@ export class FraController {
   constructor(
     @repository(FraRepository)
     public fraRepository: FraRepository,
-  ) { }
+  ) {}
   /*
     @get('/fra/count', {
       responses: {
@@ -45,9 +38,7 @@ export class FraController {
       },
     },
   })
-  async find(
-    @param.filter(Fra) filter?: Filter<Fra>,
-  ): Promise<Fra[]> {
+  async find(@param.filter(Fra) filter?: Filter<Fra>): Promise<Fra[]> {
     return this.fraRepository.find(filter);
   }
 
@@ -65,9 +56,8 @@ export class FraController {
   })
   async findById(
     @param.path.string('id') id: string,
-    @param.filter(Fra, {exclude: 'where'}) filter?: FilterExcludingWhere<Fra>
+    @param.filter(Fra, {exclude: 'where'}) filter?: FilterExcludingWhere<Fra>,
   ): Promise<Fra> {
     return this.fraRepository.findById(id, filter);
   }
-
 }

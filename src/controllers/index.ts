@@ -1,6 +1,7 @@
 export * from './certificados.controller';
 export * from './certificadosmontos.controller';
 export * from './certificadosmontostotalesid.controller';
+export * from './cloudant.controller';
 export * from './coopesocios.controller';
 export * from './ctasempleado.controller';
 export * from './cuentasdetalles.controller';
@@ -34,6 +35,7 @@ export * from './prlargoplazo.controller';
 export * from './prps.controller';
 export * from './prsolafirma.controller';
 export * from './siniestros.controller';
+export * from './users.controller';
 export * from './videos.controller';
 export * from './vwcoopeadmins.controller';
 export * from './vwmasterlookup.controller';

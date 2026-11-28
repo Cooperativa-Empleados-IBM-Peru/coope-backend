@@ -1,11 +1,5 @@
-import {
-  FilterExcludingWhere,
-  repository
-} from '@loopback/repository';
-import {
-  get,
-  getModelSchemaRef, param, response
-} from '@loopback/rest';
+import {FilterExcludingWhere, repository} from '@loopback/repository';
+import {get, getModelSchemaRef, param, response} from '@loopback/rest';
 import {Vwmasterlookup} from '../models';
 import {VwmasterlookupRepository} from '../repositories';
 
@@ -13,7 +7,7 @@ export class VwmasterlookupController {
   constructor(
     @repository(VwmasterlookupRepository)
     public vwmasterlookupRepository: VwmasterlookupRepository,
-  ) { }
+  ) {}
   /*
     @post('/vwmasterlookups')
     @response(200, {
@@ -95,7 +89,8 @@ export class VwmasterlookupController {
   })
   async findById(
     @param.path.string('id') id: string,
-    @param.filter(Vwmasterlookup, {exclude: 'where'}) filter?: FilterExcludingWhere<Vwmasterlookup>
+    @param.filter(Vwmasterlookup, {exclude: 'where'})
+    filter?: FilterExcludingWhere<Vwmasterlookup>,
   ): Promise<Vwmasterlookup> {
     return this.vwmasterlookupRepository.findById(id, filter);
   }

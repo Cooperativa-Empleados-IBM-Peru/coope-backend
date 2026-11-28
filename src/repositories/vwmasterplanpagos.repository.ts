@@ -8,9 +8,7 @@ export class VwmasterplanpagosRepository extends DefaultCrudRepository<
   typeof Vwmasterplanpagos.prototype.uuid,
   VwmasterplanpagosRelations
 > {
-  constructor(
-    @inject('datasources.db2coope') dataSource: Db2CoopeDataSource,
-  ) {
+  constructor(@inject('datasources.db2coope') dataSource: Db2CoopeDataSource) {
     super(Vwmasterplanpagos, dataSource);
   }
 }

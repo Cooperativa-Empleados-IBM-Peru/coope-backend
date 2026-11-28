@@ -8,9 +8,7 @@ export class CtsusdmontostotalesRepository extends DefaultCrudRepository<
   typeof Ctsusdmontostotales.prototype.id,
   CtsusdmontostotalesRelations
 > {
-  constructor(
-    @inject('datasources.db2coope') dataSource: Db2CoopeDataSource,
-  ) {
+  constructor(@inject('datasources.db2coope') dataSource: Db2CoopeDataSource) {
     super(Ctsusdmontostotales, dataSource);
   }
 }
