@@ -8,3 +8,10 @@ npm-debug.log
 !.env.template
 # Cache used by TypeScript's incremental build
 *.tsbuildinfo
+# Not needed to build or run the image (unit tests are excluded so they are not compiled into dist/)
+src/__tests__
+coverage
+*.md
+LICENSE
+Dockerfile
+.dockerignore
